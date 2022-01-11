@@ -20,12 +20,15 @@ class:
 ---
 
 ![bg contain](images/glue_code.jpg)
-<!-- For the glue code story: A picture of a bottle/tub of glue on a keyboard with code in the background?
-Or, two project logos (like Jenkins and Keptn) printed glued to a paper, with some code printed on a separate piece of paper that is actively being glued in place.
- -->
 
 <!-- Glue code story:
-TBW
+Back in November 2019 I was asked by a colleague to help prepare a detailed training session on our continuous delivery setup. *This was for the autonomous drive development at Volvo Cars, so quite a complex project.*
+
+By then we had been working on this continous delivery setup for about a year and a half and a simplified overview of what we had **built** was needed. After an hour in front of this massive whiteboard drawing boxes for everything we were actually a bit surprised to realize that we had over 70 components in this setup. 
+
+Some of these components were configuration files, some were existing solutions like Jenkins, Gerrit and Nexus, but about **25** of the components we identified were basically **glue code**. Like moving information from one component to an other, or allowing one component to run and get results from an other. 
+
+I remember thinking "this work is probably repeated in other projects and organizations too, **there has to be a better way**. And as it turns out, **there is**!
 -->
 
 ---
@@ -49,6 +52,7 @@ class:
 -->
 
 # After this talk
+<!-- After listening to  -->
 
 * ## Know the basics of Continuous Delivery events
 <!--  -->
@@ -83,13 +87,9 @@ _class:
 
 ---
 
-<!--
-_class: 
- - lead
- - invert
--->
+![bg contain](images/Continuous-Delivery-Landscape.png)
 
-# [CDF Landscape picture]
+<!-- Here are some examples of open-source projects  -->
 
 ---
 
