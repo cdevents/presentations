@@ -52,7 +52,7 @@ class:
 -->
 
 # After this talk
-<!-- After listening to  -->
+<!--  -->
 
 * ## Know the basics of Continuous Delivery events
 <!--  -->
@@ -89,30 +89,18 @@ _class:
 
 ![bg contain](images/Continuous-Delivery-Landscape.png)
 
-<!-- Here are some examples of open-source projects  -->
+<!-- Here are some examples of open-source projects in the continuous delivery area, many of which will at some point need to be glued together for one purpose or another. -->
 
 ---
 
 # Continuous Delivery Events
 
-* ## When something valuable happens, __announce__ it
-<!-- TBW -->
-* ## When something interesting happens, __react__ to it
-<!-- TBW -->
-
----
-
-# Valuable & Interesting
-
-- Intentions
-- Changes
-- Builds
-- Test runs
-- Deployments
-- Environments
-- Failures
-- Remediations
-- etc. etc.
+* ### When something valuable happens, __announce__ it
+<!-- Value is produced in Continuous Delivery all the time. And we are not only talking binaries and artifacts here, but also actions being taken and activities starting and stopping. -->
+* *Change, Build, Test, Deployment, New Env., Failure, Remediation, etc. etc.*
+* ### When something interesting happens, __react__ to it
+<!-- These events allow any system listening to these events to take arbitrary action when something they are interested in happens. -->
+* *Visualize, Store, Announce, Run, Retry, etc. etc.*
 
 ---
 
@@ -122,7 +110,7 @@ _class:
 
 - ## Eiffel
 
-- ## TBW
+- ## Keptn
 
 ---
 
