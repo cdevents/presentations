@@ -4,11 +4,12 @@ theme: gaia
 backgroundColor: #112
 class: invert
 ---
+<!-- Erik -->
 
 <!-- Uses MARP, see https://marp.app/ -->
 
 <!--
-class: 
+class:
  - lead
  - invert
 -->
@@ -18,6 +19,7 @@ class:
 ### Interoperability in the Continuous Delivery space
 
 ---
+<!-- Erik -->
 
 <!-- Erik -->
 
@@ -26,15 +28,14 @@ class:
 <!-- Glue code story:
 Back in November 2019 I was asked by a colleague to help prepare a detailed training session on our continuous delivery setup. *This was for the autonomous drive development at Volvo Cars, so quite a complex project.*
 
-By then we had been working on this continous delivery setup for about a year and a half and a simplified overview of what we had **built** was needed. After an hour in front of this massive whiteboard drawing boxes for everything we were actually a bit surprised to realize that we had over 70 components in this setup. 
+By then we had been working on this continous delivery setup for about a year and a half and a simplified overview of what we had **built** was needed. After an hour in front of this massive whiteboard drawing boxes for everything we were actually a bit surprised to realize that we had over 70 components in this setup.
 
-Some of these components were configuration files, some were existing solutions like Jenkins, Gerrit and Nexus, but about **25** of the components we identified were basically **glue code**. Like moving information from one component to an other, or allowing one component to run and get results from an other. 
+Some of these components were configuration files, some were existing solutions like Jenkins, Gerrit and Nexus, but about **25** of the components we identified were basically **glue code**. Like moving information from one component to an other, or allowing one component to run and get results from an other.
 
 I remember thinking "this work is probably repeated in other projects and organizations too, **there has to be a better way**. And as it turns out, **there is**!
 -->
 
 ---
-
 <!-- Andrea -->
 
 # CDEvents
@@ -49,9 +50,9 @@ I remember thinking "this work is probably repeated in other projects and organi
 <!-- Today we will talk about CDevents, a project to provide a protocol and vocabulary for events and signalling in the Continuous Delivery area. -->
 
 ---
-
+<!-- Andrea -->
 <!--
-class: 
+class:
  - invert
 -->
 
@@ -65,9 +66,9 @@ class:
 * ## Know about the CDEvents project
 <!--  -->
 ---
-
+<!-- Erik -->
 <!--
-_class: 
+_class:
  - lead
  - invert
 -->
@@ -79,26 +80,26 @@ _class:
 <!-- First up, we'll look into Continous Delivery Events as a concept.-->
 
 ---
-
+<!-- Erik -->
 # A primer on Continuous Delivery
 
 <!-- Let's start by defining Continuous Delivery -->
 
 * ### Ready-for-release
-<!-- The same way that Continouos Integration aims to get your code integrated to the main branch, Continuous Delivery aims to get your project in a state where it can be delivered -->
+<!-- The same way that Continuous Integration aims to get your code integrated to the main branch, Continuous Delivery aims to get your project in a state where it can be delivered -->
 * ### From idea to metrics and back again
 <!-- In its widest form, Continuous Delivery supports you all the way from breaking down your initial idea through getting metrics from your release project, and using those metrics as the basis for your next idea. -->
 * ### Too big for any one system to solve
-<!-- With activities ranging from verification and validation through packaging, release and remediation, it is not feasible to have a single "one-size-fits-all" Continouos Delivery system that solves everything. Instead, we need to rely on integrations. -->
+<!-- With activities ranging from verification and validation through packaging, release and remediation, it is not feasible to have a single "one-size-fits-all" Continuous Delivery system that solves everything. Instead, we need to rely on integrations. -->
 
 ---
-
+<!-- Erik -->
 ![bg contain](images/Continuous-Delivery-Landscape.png)
 
 <!-- Here are some examples of open-source projects in the continuous delivery area, many of which will at some point need to be glued together for one purpose or another. -->
 
 ---
-
+<!-- Erik -->
 # Continuous Delivery Events
 
 * ### When something valuable happens, __announce__ it
@@ -109,7 +110,7 @@ _class:
 * *Visualize, Store, Announce, Run, Retry, etc. etc.*
 
 ---
-
+<!-- Erik -->
 # Not a brand new idea
 
 - ## Argo Events
@@ -119,9 +120,9 @@ _class:
 - ## Keptn
 
 ---
-
+<!-- Erik -->
 <!--
-class: 
+class:
  - lead
  - invert
 -->
@@ -129,15 +130,15 @@ class:
 # "Let's work together!"
 
 ---
-
 <!-- Andrea -->
 
 # [CDEvents Logo]
 
 ---
+<!-- Andrea -->
 
 <!--
-class: 
+class:
  - invert
 -->
 
@@ -157,6 +158,7 @@ class:
 <!-- TBW -->
 
 ---
+<!-- Andrea -->
 
 # The CDEvents project
 
@@ -172,6 +174,7 @@ class:
 * ## <https://github.com/cdevents>
 
 ---
+<!-- Andrea -->
 
 # The CDEvents vocabulary
 
@@ -180,6 +183,7 @@ class:
 <!-- TBW -->
 
 ---
+<!-- Andrea -->
 
 # The CDEvents specification
 
@@ -188,9 +192,10 @@ class:
 <!-- TBW -->
 
 ---
+<!-- Andrea -->
 
 <!--
-class: 
+class:
  - lead
  - invert
 -->
@@ -198,15 +203,15 @@ class:
 # CDEvents use cases
 
 ---
+<!-- Andrea -->
 
 # Interoperability
 
-<!-- Andrea -->
-
 ---
+<!-- Erik -->
 
 <!--
-class: 
+class:
  - invert
 -->
 
@@ -215,9 +220,10 @@ class:
 TBW
 
 ---
+<!-- Andrea -->
 
 <!--
-_class: 
+_class:
  - lead
  - invert
 -->
@@ -227,15 +233,17 @@ _class:
 <!-- Erik -->
 
 ---
+<!-- Andrea -->
 
 # TBW Use Case 2 Details
 
 TBW
 
 ---
+<!-- Andrea -->
 
 <!--
-class: 
+class:
  - lead
  - invert
 -->
@@ -245,25 +253,30 @@ class:
 # What can CDEvents do for you?
 
 ---
+<!-- Andrea -->
 
 # TBW Do for you 1
 
 ---
+<!-- Andrea -->
 
 # TBW Do for you 2
 
 ---
+<!-- Andrea -->
 
 # TBW Do for you 3
 
 ---
+<!-- Andrea -->
 
 # The way forward
 
 ---
+<!-- Andrea -->
 
 <!--
-class: 
+class:
  - invert
 -->
 
@@ -279,9 +292,10 @@ class:
 <!-- TBW -->
 
 ---
+<!-- Erik -->
 
 <!--
-class: 
+class:
  - lead
  - invert
 -->
@@ -291,22 +305,27 @@ class:
 # Key Takeaways
 
 ---
+<!-- Erik -->
 
 # Spec for interoperability and observability
 
 ---
+<!-- Erik -->
 
 # TBW Key Takeaway 2
 
 ---
+<!-- Erik -->
 
 # TBW Key Takeaway 3
 
 ---
+<!-- Erik -->
 
 # Thank You!
 
 ---
+<!-- Erik -->
 
 # Questions?
 
