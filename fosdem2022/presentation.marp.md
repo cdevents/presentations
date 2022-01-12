@@ -19,6 +19,8 @@ class:
 
 ---
 
+<!-- Erik -->
+
 ![bg contain](images/glue_code.jpg)
 
 <!-- Glue code story:
@@ -33,6 +35,8 @@ I remember thinking "this work is probably repeated in other projects and organi
 
 ---
 
+<!-- Andrea -->
+
 # CDEvents
 
 ### Interoperability in the Continuous Delivery space
@@ -42,7 +46,7 @@ I remember thinking "this work is probably repeated in other projects and organi
 
 ##### Andrea Frittoli & Erik Sternerson
 
-<!-- Today we will talk about CDevents, a project to provide a protocol and vocabulary for events and signalling in the Continuous Delivery area. We are Andrea Frittoli and Erik Sternerson, and we want to ... -->
+<!-- Today we will talk about CDevents, a project to provide a protocol and vocabulary for events and signalling in the Continuous Delivery area. -->
 
 ---
 
@@ -69,6 +73,8 @@ _class:
 -->
 
 # Continuous Delivery Events
+
+<!-- Erik -->
 
 <!-- First up, we'll look into Continous Delivery Events as a concept.-->
 
@@ -123,6 +129,8 @@ class:
 # "Let's work together!"
 
 ---
+
+<!-- Andrea -->
 
 # [CDEvents Logo]
 
@@ -191,7 +199,9 @@ class:
 
 ---
 
-# TBW Use Case 1
+# Interoperability
+
+<!-- Andrea -->
 
 ---
 
@@ -212,7 +222,9 @@ _class:
  - invert
 -->
 
-# TBW Use Case 2
+# Observability & Metrics
+
+<!-- Erik -->
 
 ---
 
@@ -227,6 +239,8 @@ class:
  - lead
  - invert
 -->
+
+<!-- Andrea -->
 
 # What can CDEvents do for you?
 
@@ -255,13 +269,13 @@ class:
 
 # CDEvents way forward
 
-* ## Way forward 1
+* ## Learn more about what is used
 <!-- TBW -->
 
-* ## Way forward 2
+* ## Keep building the spec and the SDKs
 <!-- TBW -->
 
-* ## Way forward 3
+* ## Implement into existing tools/services
 <!-- TBW -->
 
 ---
@@ -272,11 +286,13 @@ class:
  - invert
 -->
 
+<!-- Erik -->
+
 # Key Takeaways
 
 ---
 
-# TBW Key Takeaway 1
+# Spec for interoperability and observability
 
 ---
 
