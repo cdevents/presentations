@@ -93,7 +93,7 @@ _class:
 <!-- Erik -->
 # A primer on Continuous Delivery
 
-<!-- Let's start by defining Continuous Delivery -->
+<!-- Just to make sure everyone is on the same page, let's start by defining Continuous Delivery -->
 
 * ### Ready-for-release
 <!-- The same way that Continuous Integration aims to get your code integrated to the main branch, Continuous Delivery aims to get your project in a state where it can be delivered -->
@@ -217,7 +217,7 @@ class:
 # CDEvents use cases
 
 ---
-<!-- Andrea -->
+<!-- Erik -->
 
 # Interoperability
 
@@ -229,9 +229,94 @@ class:
  - invert
 -->
 
-# TBW Use Case 1 Details
+![bg contain](images/CDEvents-FOSDEM2022-Interoperability_1.svg)
 
-TBW
+<!-- TBW -->
+
+---
+<!-- Erik -->
+
+![bg contain](images/CDEvents-FOSDEM2022-Interoperability_2.svg)
+
+<!-- TBW -->
+
+---
+<!-- Erik -->
+
+![bg contain](images/CDEvents-FOSDEM2022-Interoperability_3.svg)
+
+<!-- TBW -->
+
+---
+<!-- Erik -->
+
+![bg contain](images/CDEvents-FOSDEM2022-Interoperability_4.svg)
+
+<!-- TBW -->
+
+---
+<!-- Erik -->
+
+![bg contain](images/CDEvents-FOSDEM2022-Interoperability_5.svg)
+
+<!-- TBW -->
+
+---
+<!-- Erik -->
+
+![bg contain](images/CDEvents-FOSDEM2022-Interoperability_6.svg)
+
+<!-- TBW -->
+
+---
+<!-- Erik -->
+
+![bg contain](images/CDEvents-FOSDEM2022-Interoperability_7.svg)
+
+<!-- TBW -->
+
+---
+<!-- Erik -->
+
+![bg contain](images/CDEvents-FOSDEM2022-Interoperability_8.svg)
+
+<!-- TBW -->
+
+---
+<!-- Erik -->
+
+![bg contain](images/CDEvents-FOSDEM2022-Interoperability_9.svg)
+
+<!-- TBW -->
+
+---
+<!-- Erik -->
+
+![bg contain](images/CDEvents-FOSDEM2022-Interoperability_10.svg)
+
+<!-- TBW -->
+
+---
+<!-- Erik -->
+
+## By the way: not just artifacts
+
+- Source changes
+- Builds
+- Test runs
+- Failures
+- Compositions (multiple artifacts)
+- Announcements
+- Many many more...
+
+---
+<!-- Erik -->
+
+![bg contain](images/CDEvents-FOSDEM2022-Interoperability_X.svg)
+
+<!-- TBW -->
+
+
 
 ---
 <!-- Andrea -->
