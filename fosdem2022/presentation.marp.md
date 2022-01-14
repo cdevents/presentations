@@ -50,7 +50,7 @@ Before we dive in, let's briefly introduce ourselves.
 
 Hi, my name is Andrea Frittoli, I'm a software engineer at IBM. I serve as co-chair for the Events special interest group at the at the continuos delivery foundation and I'm one of the maintainer of the CDEvents specification. I'm also a maintainer of Tekton.
 
-[Erik]
+And my name is Erik Sternerson, I work with continuous delivery at doWhile and focus mainly on high-complexity products such as autonomous drive vehicles and mobile network backbones. I am a member of the same Events group that Andrea co-chairs, and I am also a maintainer of the CDEvents specification.
 -->
 
 ---
@@ -89,7 +89,7 @@ _class:
 <!-- Erik -->
 # A primer on Continuous Delivery
 
-<!-- Just to make sure everyone is on the same page, let's start by defining Continuous Delivery -->
+<!-- Just to make sure everyone is on the same page, let's start by describing Continuous Delivery -->
 
 * ### Ready-for-release
 <!-- The same way that Continuous Integration aims to get your code integrated to the main branch, Continuous Delivery aims to get your project in a state where it can be delivered -->
@@ -119,11 +119,18 @@ _class:
 <!-- Erik -->
 # Not a brand new idea
 
-- ## Argo Events
+<!-- Using events in Continuous Delivery is not something we invented in our group. -->
 
-- ## Eiffel
+- ## Argo Events
+<!-- We have Argo, which can listen to many different sources and take action based on events. -->
+
+- ## Eiffel Events
+<!-- We have Eiffel Events, which is probably the closest thing to CDEvents, providing a protocol for sending events which is primarily used by a few companies in Sweden. -->
 
 - ## Keptn
+<!-- And we have Keptn, which uses events to connect to and control services like Helm, Artillery or JMeter. -->
+
+- ## Many more...
 
 ---
 <!-- Erik -->
@@ -134,6 +141,8 @@ class:
 -->
 
 # "Let's work together!"
+
+<!-- Andrea and I are here today to share more about how members of the communities of the projects I just mentioned work together to create something more grand. -->
 
 ---
 <!-- Andrea -->
@@ -212,6 +221,8 @@ class:
 
 # Interoperability
 
+<!-- The first use case we want to talk about today is making things work together.  -->
+
 ---
 <!-- Erik -->
 
@@ -222,92 +233,94 @@ class:
 
 ![bg contain](images/CDEvents-FOSDEM2022-Interoperability_1.svg)
 
-<!-- TBW -->
+<!-- I would like to take you with me back to my world for a while, where I am on a quest to build a car. A modern car has hundreds of software modules in it, and actually getting from an individual software module to a working car is not trivial. For this use case, we will focus in on builds. -->
 
 ---
 <!-- Erik -->
 
 ![bg contain](images/CDEvents-FOSDEM2022-Interoperability_2.svg)
 
-<!-- TBW -->
+<!-- In this organization we want to let teams choose their own optimal CI/CD set-up, and many of the software development teams in this organization prefer to use Zuul, for its dependency handling and scalability. -->
 
 ---
 <!-- Erik -->
 
 ![bg contain](images/CDEvents-FOSDEM2022-Interoperability_3.svg)
 
-<!-- TBW -->
+<!-- Some teams prefer GoCD for the way it handles deep dependency chains. -->
 
 ---
 <!-- Erik -->
 
 ![bg contain](images/CDEvents-FOSDEM2022-Interoperability_4.svg)
 
-<!-- TBW -->
+<!-- Some teams prefer GitLab to have the builds close to the source code.-->
 
 ---
 <!-- Erik -->
 
 ![bg contain](images/CDEvents-FOSDEM2022-Interoperability_5.svg)
 
-<!-- TBW -->
+<!-- Some teams prefer Jenkins for the ease-of-use and plugin echosystem. -->
 
 ---
 <!-- Erik -->
 
 ![bg contain](images/CDEvents-FOSDEM2022-Interoperability_6.svg)
 
-<!-- TBW -->
+<!-- To further complicate things, we don't build all the software in-house, we also have suppliers. -->
 
 ---
 <!-- Erik -->
 
 ![bg contain](images/CDEvents-FOSDEM2022-Interoperability_7.svg)
 
-<!-- TBW -->
+<!-- But all these services and suppliers produce builds for us. -->
 
 ---
 <!-- Erik -->
 
 ![bg contain](images/CDEvents-FOSDEM2022-Interoperability_8.svg)
 
-<!-- TBW -->
+<!-- We use these built software moduloes for various purposes, for instance running them in Carla, before we so to say "load" them into the car itself. -->
 
 ---
 <!-- Erik -->
 
 ![bg contain](images/CDEvents-FOSDEM2022-Interoperability_9.svg)
 
-<!-- TBW -->
+<!-- So now we start looking at the Zuul docs to see what the output of a build is. An "Artifact". Right. For GoCD? "Artifact". GitLab and Jenkins? Also "Artifacts". Then we are home free right?   -->
 
 ---
 <!-- Erik -->
 
 ![bg contain](images/CDEvents-FOSDEM2022-Interoperability_10.svg)
 
-<!-- TBW -->
+<!-- Well, no. Because a Zuul artifact is a bit different from a GoCD artifact, which is a bit different from a GitLab artifact, and so on an so forth. So we will likely need to write a bit of translation or glue code to be able to actually understand and receive all these built software modules. -->
 
 ---
 <!-- Erik -->
 
 ## By the way: not just artifacts
 
+<!-- And this really doesn't apply only to artifacts. -->
+
 - Source changes
-- Builds
+- Build activities
 - Test runs
 - Failures
 - Compositions (multiple artifacts)
 - Announcements
 - Many many more...
 
+<!-- So, what would we want instead? -->
+
 ---
 <!-- Erik -->
 
 ![bg contain](images/CDEvents-FOSDEM2022-Interoperability_X.svg)
 
-<!-- TBW -->
-
-
+<!-- We would like all these build systems, and our suppliers, to have the option to announce new artifacts in a standardized format. CDEvents will provide this format, but will need support from the community to start applying it to relevant projects. -->
 
 ---
 <!-- Andrea -->
@@ -319,8 +332,6 @@ _class:
 -->
 
 # Observability & Metrics
-
-<!-- Erik -->
 
 ---
 <!-- Andrea -->
@@ -394,20 +405,27 @@ class:
 
 # Key Takeaways
 
----
-<!-- Erik -->
-
-# Spec for interoperability and observability
+<!-- We've reached the end of our talk, and we wanted to summarize a bit before we move on to the Q&A section. -->
 
 ---
 <!-- Erik -->
 
-# TBW Key Takeaway 2
+# CDEvents - A spec for interoperability and observability
+
+<!-- The CDEvents project, with contributors from all over the CI/CD sphere, is building a specification for events in CI/CD that can be used to enable both interoperability and observability for Continuous Delivery systems. -->
 
 ---
 <!-- Erik -->
 
-# TBW Key Takeaway 3
+# Integrations needed
+
+<!-- Of course a spec that no one uses is not benefiting anyone, so we will need both SDKs for sending events and integrations into the projects that could send and listen to these events. Could be a good starter-task for new developers to your project, or maybe something for a GSoC student? -->
+
+---
+<!-- Erik -->
+
+# We want to hear from YOU!
+<!-- Something we really need right now is to learn more about the pain points and needs that YOU have in your day-to-day, and what you see as upcoming challenges. Please get in touch! -->
 
 ---
 <!-- Erik -->
