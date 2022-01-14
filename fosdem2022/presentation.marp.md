@@ -64,12 +64,8 @@ class:
 <!--  -->
 
 * ## Know the basics of Continuous Delivery events
-<!--  -->
 * ## Understand use cases for events
-<!--  -->
 * ## Know about the CDEvents project
-<!--  -->
-
 * ## Share your Glue-code story
 
 <!-- Today we're in the FOSDEM CI/CD devroom, so most of you are probably familiar to some degree with the concept of continuous delivery.
@@ -147,6 +143,9 @@ backgroundColor: #FFF
 
 ![cdevents logo](3rdPartyLogos/cdevents-draft.png)
 
+<!-- Enter the CDEvents project.
+Now that we're recording, the logo is almost finalized. We'll update the slides with the final version of the logo as soon as it's available.-->
+
 ---
 <!-- Andrea -->
 
@@ -157,44 +156,36 @@ class:
 -->
 
 # What is CDEvents?
-<!-- TBW -->
 
 * ## A vocabulary
-<!-- TBW -->
-
 * ## A specification
-<!-- TBW -->
-
 * ## A project
-<!-- TBW -->
-
 * ## In progress :)
-<!-- TBW -->
+* ## [github.com/cdevents](https://github.com/cdevents)
 
+<!-- At the time we are recording, CDEvents is the latest addition to the CDF incubating projects. CDEvents aims to be the common language the CD ecosystem events, so it provides a vocabulary, a specification as well as SDKs. It's work in progress but already a few projects provide experimental support for it.-->
 ---
 <!-- Andrea -->
 
 # The CDEvents project
 
 * ## SIG-Interop @ CDF mid 2020
-<!-- TBW -->
-
 * ## SIG-Events @ CDF early 2021
-<!-- TBW -->
-
 * ## CDEvents late 2021
-<!-- TBW -->
 
-* ## <https://github.com/cdevents>
-
+<!-- Before we dive in further, a bit of history. The interoperability special interest group was created in mid 2020 with the goal to discuss and research interoperability in the CD space. One of the work-stream of the SIG was focused on interoperability through events. In early 2021 we transformed the work-stream into an SIG of its own, and towards the end of last year we created the CDEvents project, to host the specification work of the SIG. The project was proposed as a CDF incubating project and accepted in December 2021. -->
 ---
 <!-- Andrea -->
 
 # The CDEvents vocabulary
 
-[Insert vocabulary-relevant picture here]
+* ## Core
+* ## Source Code Version Control
+* ## Continuous Integration Pipelines
+* ## Continuous Deployment Pipelines
+* ## ...more to come
 
-<!-- TBW -->
+<!-- Most CD platform define their abstractions, data model and nomenclature. The interoperability SIG has already been collecting these from various platforms. Many names are shared across platforms, but sometimes the same name bears different meanings in different projects. To achieve interoperability through events we needed to define a nomenclature with shared semantics across platforms. To achieve that we first created four buckets to group the different events. The list is not exhaustive, as we'd like eventually to cover more aspects of the software lifecycle, like for instance monitoring and incident management. Within each bucket, we defined a few abstractions. For instance "Core" defines "Task Runs" and "Pipeline Runs". Continuous integration defines "Build", "Test Case", "Test Suite" and "Artifact". -->
 
 ---
 <!-- Andrea -->
