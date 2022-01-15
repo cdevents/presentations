@@ -201,9 +201,13 @@ class:
 
 # The CDEvents specification
 
-[Insert JSON event example picture]
+* ## Data Model
+    * ### Mandatory / OptionalFields
+* ## Protocol Bindings
+    * ### CloudEvents
+* ## Primer
 
-<!-- TBW -->
+<!-- With the vocabulary -->
 
 ---
 <!-- Andrea -->
@@ -336,9 +340,18 @@ _class:
 ---
 <!-- Andrea -->
 
-# TBW Use Case 2 Details
+![bg contain](images/cdevents_use_case_observability_1.svg)
 
-TBW
+---
+<!-- Andrea -->
+
+![bg contain](images/cdevents_use_case_observability_2.svg)
+---
+<!-- Andrea -->
+
+---
+
+![bg contain](images/cdevents_use_case_observability_3.svg)
 
 ---
 <!-- Andrea -->
