@@ -25,11 +25,11 @@ class:
 ![bg contain](images/glue_code.jpg)
 
 <!-- Glue code story:
-Back in November 2019 I was asked by a colleague to help prepare a detailed training session on our continuous delivery setup. *This was for the autonomous drive development at Volvo Cars, so quite a complex project.*
+Back in November 2019 I was asked by a colleague to help prepare a training session on our continuous delivery setup. *This was for the autonomous drive development at Volvo Cars, so quite a complex project.*
 
-By then we had been working on this continuous delivery setup for about a year and a half and a simplified overview of what we had **built** was needed. After an hour in front of this massive whiteboard drawing boxes for everything we were actually a bit surprised to realize that we had over 70 components in this setup.
+By then we had been working on this continuous delivery setup for about a year and a half and a simplified overview of what we had **built** was needed. After an hour in front of this massive whiteboard drawing boxes for everything we had 72 components on the board, quite a lot but not really surprising since it was quite complex.
 
-Some of these components were configuration files, some were existing solutions like Jenkins, Gerrit and Nexus, but about **25** of the components we identified were basically **glue code**. Like moving information from one component to an other, or allowing one component to run and get results from an other.
+Some of these components were configuration files, some were existing solutions like Jenkins, Gerrit and Nexus, but about **25** of the components we identified were basically just **glue code**... Just making things work together... Like moving information from one component to an other, or starting an action in one .
 
 I remember thinking "this work is probably repeated in other projects and organizations too, **there has to be a better way**. And as it turns out, **there is**!
 -->
@@ -87,36 +87,39 @@ _class:
 
 # Continuous Delivery Events
 
-<!-- First up, we'll look into Continuous Delivery Events as a concept.-->
+<!-- Thanks Andrea! So, first up, we'll look into Continuous Delivery Events as a concept.-->
 
 ---
 <!-- Erik -->
 # A primer on Continuous Delivery
 
-<!-- Just to make sure everyone is on the same page, let's start by describing Continuous Delivery -->
+<!-- Just to make sure everyone is on the same page, let's quickly summarize what Continuous Delivery is all about. -->
 
-* ### Ready-for-release
-<!-- The same way that Continuous Integration aims to get your code integrated to the main branch, Continuous Delivery aims to get your project in a state where it can be delivered -->
-* ### From idea to metrics and back again
-<!-- In its widest form, Continuous Delivery supports you all the way from breaking down your initial idea through getting metrics from your release project, and using those metrics as the basis for your next idea. -->
-* ### Too big for any one system to solve
+* ### Goal: Ready-for-release
+<!-- The same way that Continuous Integration aims to get your code integrated to the main branch of your repository, Continuous Delivery aims to get your project in a state where it can be delivered -->
+* ### Scope: Idea → Build → Test → Measure → Idea
+<!-- In its widest form, Continuous Delivery goes beyond just build and deployment. It can support you all the way from breaking down your initial idea through build and verifiction to getting metrics from your released project, and even using those same metrics as the basis for your next idea. -->
+* ### Too much for any one system to solve
 <!-- With activities ranging from verification and validation through packaging, release and remediation, it is not feasible to have a single "one-size-fits-all" Continuous Delivery system that solves everything. Instead, we need to rely on integrations. -->
 
 ---
 <!-- Erik -->
 ![bg contain](images/Continuous-Delivery-Landscape.png)
 
-<!-- Here are some examples of open-source projects in the continuous delivery area, many of which will at some point need to be glued together for one purpose or another. -->
+<!-- Here we see just a few of the open-source projects in the continuous delivery area. Many of these projects will at some point need to be used together for some specific purpose, and that typically requires some form of integration. -->
 
 ---
 <!-- Erik -->
 # Continuous Delivery Events
 
+<!-- So, now that we have a shared understanding of continuous delivery, let's move forward to continous delivery events.
+There are two fundamental ideas behind this concep. -->
+
 * ### When something valuable happens, __announce__ it
-<!-- Value is produced in Continuous Delivery all the time. And we are not only talking binaries and artifacts here, but also actions being taken and activities starting and stopping. -->
+<!-- Value is produced in Continuous Delivery all the time. And we are not only talking built binaries and artifacts here, but also actions being taken and activities starting and stopping. -->
 * *Change, Build, Test, Deployment, New Env., Failure, Remediation, etc. etc.*
-* ### When something interesting happens, __react__ to it
-<!-- These events allow any system listening to these events to take arbitrary action when something they are interested in happens. -->
+* ### When something interesting is seen, __react__ to it
+<!-- These sent events allow any system listening to these events to take arbitrary action when something they are interested in happens. -->
 * *Visualize, Store, Announce, Run, Retry, etc. etc.*
 
 ---
@@ -125,11 +128,11 @@ _class:
 
 <!-- Using events in Continuous Delivery is not something we invented in our group. -->
 
-- ## Argo Events
-<!-- We have Argo, which can listen to many different sources and take action based on events. -->
+- ## Tekton
+<!-- We have Tekton, which produces CloudEvents and can react to events using triggers. -->
 
 - ## Eiffel Events
-<!-- We have Eiffel Events, which is probably the closest thing to CDEvents, providing a protocol for sending events which is primarily used by a few companies in Sweden. -->
+<!-- We have Eiffel Events, providing a protocol for many kinds of events related to the production and verification of complex products. -->
 
 - ## Keptn
 <!-- And we have Keptn, which uses events to connect to and control services like Helm, Artillery or JMeter. -->
@@ -337,6 +340,25 @@ class:
 ---
 <!-- Erik -->
 
+![bg contain](images/glue_code.jpg)
+
+<!-- And we are basically back here again, writing more and more glue code to fit things together. -->
+
+---
+<!-- Erik -->
+
+
+<!--
+_class:
+ - lead
+ - invert
+-->
+
+# Solution: CDEvents
+
+---
+<!-- Erik -->
+
 ![bg contain](images/CDEvents-FOSDEM2022-Interoperability_X.svg)
 
 <!-- We would like all these build systems, and our suppliers, to have the option to announce new artifacts in a standardized format. CDEvents will provide this format, but will need support from the community to start applying it to relevant projects. -->
@@ -457,9 +479,10 @@ class:
 ---
 <!-- Erik -->
 
-# CDEvents - A spec for interoperability and observability
+# CDEvents
+## A spec for interoperability and observability
 
-<!-- The CDEvents project, with contributors from all over the CI/CD sphere, is building a specification for events in CI/CD that can be used to enable both interoperability and observability for Continuous Delivery systems. -->
+<!-- The CDEvents project, with contributors from all over the CI/CD community, is building a specification for events in CI/CD that can be used to enable both interoperability and observability for Continuous Delivery systems. -->
 
 ---
 <!-- Erik -->
@@ -472,7 +495,7 @@ class:
 <!-- Erik -->
 
 # We want to hear from YOU!
-<!-- Something we really need right now is to learn more about the pain points and needs that YOU have in your day-to-day, and what you see as upcoming challenges. Please get in touch! -->
+<!-- Fundamentally the purpose of CDEvents is to become something that helps YOU. So, something we really need right now is to learn more about the pain points and needs that YOU have in your day-to-day, and what you see as upcoming challenges. Please get in touch! -->
 
 ---
 <!-- Erik -->
