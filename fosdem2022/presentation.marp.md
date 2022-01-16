@@ -96,40 +96,44 @@ _class:
 <!-- Just to make sure everyone is on the same page, let's quickly summarize what Continuous Delivery is all about. -->
 
 * ### Goal: Ready-for-release
-<!-- The same way that Continuous Integration aims to get your code integrated to the main branch of your repository, Continuous Delivery aims to get your project in a state where it can be delivered -->
+<!-- The same way that Continuous Integration aims to get your code integrated to the main branch of your repository, Continuous Delivery aims to get your project in a state where it can be released -->
 * ### Scope: Idea → Build → Test → Measure → Idea
 <!-- In its widest form, Continuous Delivery goes beyond just build and deployment. It can support you all the way from breaking down your initial idea through build and verifiction to getting metrics from your released project, and even using those same metrics as the basis for your next idea. -->
 * ### Too much for any one system to solve
-<!-- With activities ranging from verification and validation through packaging, release and remediation, it is not feasible to have a single "one-size-fits-all" Continuous Delivery system that solves everything. Instead, we need to rely on integrations. -->
+<!-- With the wide range of activities needed to realize this scope, it is simple not feasible to have a single "one-size-fits-all" Continuous Delivery system that solves everything. Instead, we need to rely on integrations. -->
 
 ---
 <!-- Erik -->
 ![bg contain](images/Continuous-Delivery-Landscape.png)
 
-<!-- Here we see just a few of the open-source projects in the continuous delivery area. Many of these projects will at some point need to be used together for some specific purpose, and that typically requires some form of integration. -->
+<!-- Here we see just a few of the open-source projects in the continuous delivery area. Many of these projects will at some point need to be used together for some specific purpose, and this is where the integrations I just mentioned come in. -->
 
 ---
 <!-- Erik -->
 # Continuous Delivery Events
 
 <!-- So, now that we have a shared understanding of continuous delivery, let's move forward to continous delivery events.
-There are two fundamental ideas behind this concep. -->
+There are two fundamental ideas behind this concept. -->
 
 * ### When something valuable happens, __announce__ it
-<!-- Value is produced in Continuous Delivery all the time. And we are not only talking built binaries and artifacts here, but also actions being taken and activities starting and stopping. -->
+<!-- The first fundamental idea is: When something of value happens, the system that knows about this value announces it by sending an event.
+
+Value is produced in Continuous Delivery all the time. And we are not only talking built binaries and artifacts here. -->
 * *Change, Build, Test, Deployment, New Env., Failure, Remediation, etc. etc.*
+<!-- It could be everything from code changes, builds. test runs etc. etc. -->
 * ### When something interesting is seen, __react__ to it
-<!-- These sent events allow any system listening to these events to take arbitrary action when something they are interested in happens. -->
+<!-- The second part of it is that every system that can listen to the events that are sent can chose to react to them.. -->
 * *Visualize, Store, Announce, Run, Retry, etc. etc.*
+<!-- These reactions can fall into many categories, like storing and visualizing to starting some other activity. -->
 
 ---
 <!-- Erik -->
 # Not a brand new idea
 
-<!-- Using events in Continuous Delivery is not something we invented in our group. -->
+<!-- Now, using events in Continuous Delivery is not something we invented in our group. -->
 
 - ## Tekton
-<!-- We have Tekton, which produces CloudEvents and can react to events using triggers. -->
+<!-- We have for instance Tekton, which produces CloudEvents and can react to events using triggers. -->
 
 - ## Eiffel Events
 <!-- We have Eiffel Events, providing a protocol for many kinds of events related to the production and verification of complex products. -->
@@ -138,6 +142,9 @@ There are two fundamental ideas behind this concep. -->
 <!-- And we have Keptn, which uses events to connect to and control services like Helm, Artillery or JMeter. -->
 
 - ## Many more...
+<!-- And there are plenty of other systems that send or receive something like events. 
+
+The problem is that the events sent or received by one system is not often understood by others.-->
 
 ---
 <!-- Erik -->
@@ -149,7 +156,7 @@ class:
 
 # "Let's work together!"
 
-<!-- Andrea and I are here today to share more about how members of the communities of the projects I just mentioned work together to create something more grand. -->
+<!-- So, there was an idea: Let's collaborate on Continuous Delivery Events! -->
 
 ---
 <!-- Andrea -->
@@ -269,21 +276,21 @@ class:
 
 ![bg contain](images/CDEvents-FOSDEM2022-Interoperability_3.svg)
 
-<!-- Some teams prefer GoCD for the way it handles deep dependency chains. -->
+<!-- Some teams prefer GoCD for the way it visualizes deep dependency chains. -->
 
 ---
 <!-- Erik -->
 
 ![bg contain](images/CDEvents-FOSDEM2022-Interoperability_4.svg)
 
-<!-- Some teams prefer GitLab to have the builds close to the source code.-->
+<!-- Some teams prefer GitLab to have both the source code and the project stuff in the same platform.-->
 
 ---
 <!-- Erik -->
 
 ![bg contain](images/CDEvents-FOSDEM2022-Interoperability_5.svg)
 
-<!-- Some teams prefer Jenkins for the ease-of-use and plugin echosystem. -->
+<!-- Some teams prefer Jenkins for the ease-of-use and the wide variety of plugins. -->
 
 ---
 <!-- Erik -->
@@ -297,14 +304,14 @@ class:
 
 ![bg contain](images/CDEvents-FOSDEM2022-Interoperability_7.svg)
 
-<!-- But all these services and suppliers produce builds for us. -->
+<!-- But all these services and suppliers produce built software modules for us. -->
 
 ---
 <!-- Erik -->
 
 ![bg contain](images/CDEvents-FOSDEM2022-Interoperability_8.svg)
 
-<!-- We use these built software moduloes for various purposes, for instance running them in Carla, before we so to say "load" them into the car itself. -->
+<!-- We use these built software moduloes for various purposes, for instance running them in the audonomous drive simulator plaftorm Carla, so we can test them before we "load" them into the car itself. -->
 
 ---
 <!-- Erik -->
