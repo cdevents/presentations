@@ -495,6 +495,8 @@ class:
 <!-- Erik -->
 
 # We want to hear from YOU!
+
+[tinyurl.com/talktocdevents](https://tinyurl.com/talktocdevents)
 <!-- Fundamentally the purpose of CDEvents is to become something that helps YOU. So, something we really need right now is to learn more about the pain points and needs that YOU have in your day-to-day, and what you see as upcoming challenges. Please get in touch! -->
 
 ---
@@ -516,3 +518,4 @@ _footer: 'FOSDEM CI/CD Devroom | 06.02.2022'
 
 ### _Join the cause!_
 ### _CDEvents <https://github.com/cdevents>_
+### [tinyurl.com/talktocdevents](https://tinyurl.com/talktocdevents)
