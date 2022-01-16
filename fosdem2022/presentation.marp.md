@@ -458,15 +458,16 @@ class:
 -->
 
 # CDEvents way forward
+<!-- So, what's next for cdevents? --->
 
-* ## Learn more about what is used
-<!-- TBW -->
+* ## Learn more about existing use cases
+<!-- Through the Events SIG will continue to learn about the CD setup of different organisations, how events are used today and which use cases we shall support through cdevents -->
 
 * ## Keep building the spec and the SDKs
-<!-- TBW -->
+<!-- We will continue to build the spec to satisfy the use cases and to develop SDKs for various languages. We plan to work on one or more PoC to validate our solutions. -->
 
 * ## Implement into existing tools/services
-<!-- TBW -->
+<!-- Finally, which is critical to the success of cdevents, we will implement and promote the implementation of cdevents in existing tools and services. -->
 
 ---
 <!-- Erik -->
