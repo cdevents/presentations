@@ -391,21 +391,30 @@ class:
 
 # What can CDEvents do for you?
 
+<!-- To summarise, what can CDEvents do for you?
+Events let you build a decoupled, scalable and reliable architecture. 
+As you create your build your CD workflows, CDEvents will let you: -->
 ---
 <!-- Andrea -->
 
-# TBW Do for you 1
+<!--
+class:
+ - invert
+-->
 
+![bg right:60%](images/glue_code.jpg)
+
+## Reduce Glue Code
 ---
 <!-- Andrea -->
 
-# TBW Do for you 2
-
+![bg left:66%](images/mike-benna-X-NAMq6uP3Q-unsplash.jpg)
+## End to End CD Workflow Visibility
 ---
 <!-- Andrea -->
 
-# TBW Do for you 3
-
+![bg right:60%](images/william-warby-WahfNoqbYnM-unsplash.jpg)
+## Collect data to measure DevOps Performance
 ---
 <!-- Andrea -->
 
