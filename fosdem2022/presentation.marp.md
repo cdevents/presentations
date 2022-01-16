@@ -67,10 +67,10 @@ class:
 # After this talk
 <!--  -->
 
-* ## Know the basics of Continuous Delivery events
-* ## Understand use cases for events
-* ## Know about the CDEvents project
-* ## Share your Glue-code story
+* ### Know the basics of Continuous Delivery events
+* ### Understand use cases for events
+* ### Know about the CDEvents project
+* ### Share your Glue-code story: tinyurl.com/talktocdevents
 
 <!-- Today we're in the FOSDEM CI/CD devroom, so most of you are probably familiar to some degree with the concept of continuous delivery.
 Today we we'll focus on events in the continuous delivery space and how do we use them to solve the glue-code issue, and more. We'll also introduce the CDEvents project, specification and community.
