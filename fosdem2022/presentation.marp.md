@@ -3,6 +3,7 @@ marp: true
 theme: gaia
 backgroundColor: #112
 class: invert
+_footer: 'FOSDEM CI/CD Devroom | 06.02.2022'
 ---
 <!-- Erik -->
 
@@ -36,6 +37,9 @@ I remember thinking "this work is probably repeated in other projects and organi
 ---
 <!-- Andrea + Erik -->
 
+<!--
+_footer: FOSDEM CI/CD Devroom | 06.02.2022
+-->
 # CDEvents
 
 ### Interoperability in the Continuous Delivery space
@@ -150,7 +154,7 @@ class:
 backgroundColor: #FFF
 -->
 
-![cdevents logo](3rdPartyLogos/cdevents-draft.png)
+![bg auto](3rdPartyLogos/cdevents-draft.png)
 
 <!-- Enter the CDEvents project.
 Now that we're recording, the logo is almost finalized. We'll update the slides with the final version of the logo as soon as it's available.-->
@@ -166,11 +170,11 @@ class:
 
 # What is CDEvents?
 
-* ## A vocabulary
-* ## A specification
-* ## A project
-* ## In progress :)
-* ## [github.com/cdevents](https://github.com/cdevents)
+- ## A vocabulary
+- ## A specification
+- ## A project
+- ## In progress :)
+- ## [github.com/cdevents](https://github.com/cdevents)
 
 <!-- At the time we are recording, CDEvents is the latest addition to the CDF incubating projects. CDEvents aims to be the common language the CD ecosystem events, so it provides a vocabulary, a specification as well as SDKs. It's work in progress but already a few projects provide experimental support for it.-->
 ---
@@ -188,11 +192,11 @@ class:
 
 # The CDEvents vocabulary
 
-* ## Core
-* ## Source Code Version Control
-* ## Continuous Integration Pipelines
-* ## Continuous Deployment Pipelines
-* ## ...more to come
+- ## Core
+- ## Source Code Version Control
+- ## Continuous Integration Pipelines
+- ## Continuous Deployment Pipelines
+- ## ...more to come
 
 <!-- Most CD platform define their abstractions, data model and nomenclature. The interoperability SIG has already been collecting these from various platforms. Many names are shared across platforms, but sometimes the same name bears different meanings in different projects. To achieve interoperability through events we needed to define a nomenclature with shared semantics across platforms. To achieve that we first created four buckets to group the different events. The list is not exhaustive, as we'd like eventually to cover more aspects of the software lifecycle, like for instance monitoring and incident management. Within each bucket, we defined a few abstractions. For instance "Core" defines "Task Runs" and "Pipeline Runs". Continuous integration defines "Build", "Test Case", "Test Suite" and "Artifact". -->
 
@@ -201,13 +205,18 @@ class:
 
 # The CDEvents specification
 
-* ## Data Model
-    * ### Mandatory / OptionalFields
-* ## Protocol Bindings
-    * ### CloudEvents
-* ## Primer
+- ## Data Model
+    - ### Events and Fields
+- ## Protocol Bindings
+    - ### CloudEvents
+- ## Primer
 
-<!-- With the vocabulary -->
+<!-- With the vocabulary defined, the next step has been to define which events are available for each abstraction. For instance a PipelineRun can be queued, started and finished. An artifact and by packaged and published. Each event has mandatory and optional fields. We're also evaluating extension mechanisms, to allow two kind of extension: documented third party fields as well as free-style content.
+
+Since there are plenty of established messaging protocols already available, we didn't want to reinvent the wheel. Rather instead we have been working at identifying which fields are required for the continuous delivery use cases, and then we defined protocol bindings which define how CDEvents map onto a specific protocol.
+CloudEvents - a CNCF project - are an established format in the Cloud Native space, and that's the first binding we defined.
+
+Finally, as part of the specification we started working on a cdevents primer document, which documents the protocol architecture, design decisions and reference use cases. -->
 
 ---
 <!-- Andrea -->
@@ -219,6 +228,12 @@ class:
 -->
 
 # CDEvents use cases
+
+<!-- Use cases are key to development of cdevents. When we define events and their fields, we ask the question "what is a minimal set of information we need to satisfy the use cases?"
+There are two root use cases, which we identified until now.
+The first one is is interoperability, in the sense on making it possible for a CD platform to consume events produced by another one, without the need of dedicated glue code.
+The second one is observability and metrics. In a way this is also about interoperability, and it refers to the ability of collecting events from different CD platforms, being able to correlate them and process them consistently to build and end-to-end view of the overall CD workflow an its properties, like duration.
+-->
 
 ---
 <!-- Erik -->
@@ -337,22 +352,32 @@ _class:
 
 # Observability & Metrics
 
+<!-- Thanks Erik, that was a really good use case. The next one is observability and metrics -->
 ---
 <!-- Andrea -->
 
 ![bg contain](images/cdevents_use_case_observability_1.svg)
 
+<!-- Let's consider a the following CD setup, where code is written and maintained in GitHub. When changes are made, they go through different tests, maintained by different teams, which use different technologies. Some tests are running in GitHub directly as GitHub actions. Some others are executed in Jenkins and other as Tekton pipelines. Releases are managed through Tekton as well, while deployments are managed with Argo. Keptn is used to manage remediations strategies on production clusters.
+-->
+
 ---
 <!-- Andrea -->
 
 ![bg contain](images/cdevents_use_case_observability_2.svg)
+
+<!-- How may we visualize an e2e workflow?
+All these systems supports events in some format, so we could start collecting events. Since but they are all different though, our events collector would need to support multiple ways of collecting events. Both Tekon and Keptn use cloud events, which makes things a bit easier, but even for those two, there are no shared semantics.-->
+
 ---
 <!-- Andrea -->
 
----
-
 ![bg contain](images/cdevents_use_case_observability_3.svg)
 
+<!-- If all platforms supported the same format of events, like CloudEvents, our event collector could become one of the existing events broker, like Knative Eventing. Going back to the e2e workflow though, if we wanted to visualize the flow of a change from when it's written, through test, release, deploy and possibly rollback, we'd need to have enough information in the events to be able to correlated with each other. This is one if the issues that we want to address with CDEvents.
+Another question that we may want to be able to answer is how effective is the DevOps setup of my organisation? To answer that you would need to define metrics, collect the relevant data and visualise it. CDEvents may help collecting the data from heterogeneous sources, store it and process it in a consistent way.
+How do we know what kind of data we need though? In the cdevents project we started considering the metrics defined by DORA (DevOps research and assesment) as a reference to validate against.
+-->
 ---
 <!-- Andrea -->
 
@@ -447,6 +472,9 @@ class:
 
 ---
 <!-- Erik -->
+<!--
+_footer: 'FOSDEM CI/CD Devroom | 06.02.2022'
+-->
 
 # Questions?
 
