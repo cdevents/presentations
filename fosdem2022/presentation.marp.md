@@ -24,17 +24,19 @@ class:
 
 # Back in November 2019...
 
+<!-- Back in November 2019 I was asked to create an overview of our continuous delivery setup. *This was for the autonomous drive development at Volvo Cars, so quite a complex project.*
+
+After a few hours in front of this massive whiteboard drawing boxes for everything, we had **72** components on the board, quite a lot but hey, complex project.
+
+Some of these components were services like Jenkins, Gerrit and Nexus, some were configuration files, but **25** of these components were basically just... -->
+
 ---
 <!-- Erik -->
 
 ![bg contain](images/glue_code.jpg)
 
 <!-- Glue code story:
-Back in November 2019 I was asked to create an overview of our continuous delivery setup. *This was for the autonomous drive development at Volvo Cars, so quite a complex project.*
-
-After a few hours in front of this massive whiteboard drawing boxes for everything, we had **72** components on the board, quite a lot but hey, complex project.
-
-Some of these components were services like Jenkins, Gerrit and Nexus, some were configuration files, but **25** of these components were basically just **glue code**... serving *no other* purpose.. than making things work together. That's **1/3** of all the components.... 
+...**glue code**... serving *no other* purpose.. than making things work together. That's **1/3** of all the components.... 
 
 And I remember thinking: "similar glue code is probably created over and over again in other projects and in other organisations... There has to be a better way..." And there is!
 -->
