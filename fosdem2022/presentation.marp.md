@@ -22,16 +22,21 @@ class:
 ---
 <!-- Erik -->
 
+# Back in November 2019...
+
+---
+<!-- Erik -->
+
 ![bg contain](images/glue_code.jpg)
 
 <!-- Glue code story:
-Back in November 2019 I was asked by a colleague to help prepare a training session on our continuous delivery setup. *This was for the autonomous drive development at Volvo Cars, so quite a complex project.*
+Back in November 2019 I was asked to create an overview of our continuous delivery setup. *This was for the autonomous drive development at Volvo Cars, so quite a complex project.*
 
-By then we had been working on this continuous delivery setup for about a year and a half and a simplified overview of what we had **built** was needed. After an hour in front of this massive whiteboard drawing boxes for everything we had 72 components on the board, quite a lot but not really surprising since it was quite complex.
+After a few hours in front of this massive whiteboard drawing boxes for everything, we had **72** components on the board, quite a lot but hey, complex project.
 
-Some of these components were configuration files, some were existing solutions like Jenkins, Gerrit and Nexus, but about **25** of the components we identified were basically just **glue code**... Just making things work together... Like moving information from one component to an other, or starting an action in one .
+Some of these components were services like Jenkins, Gerrit and Nexus, some were configuration files, but **25** of these components were basically just **glue code**... serving *no other* purpose.. than making things work together. That's **1/3** of all the components.... 
 
-I remember thinking "this work is probably repeated in other projects and organizations too, **there has to be a better way**. And as it turns out, **there is**!
+And I remember thinking: "similar glue code is probably created over and over again in other projects and in other organisations... There has to be a better way..." And there is!
 -->
 
 ---
@@ -130,7 +135,7 @@ Value is produced in Continuous Delivery all the time. And we are not only talki
 <!-- Erik -->
 # Not a brand new idea
 
-<!-- Now, using events in Continuous Delivery is not something we invented in our group. -->
+<!-- Now, using events in Continuous Delivery is not something we invented in our project. -->
 
 - ## Tekton
 <!-- We have for instance Tekton, which produces CloudEvents and can react to events using triggers. -->
