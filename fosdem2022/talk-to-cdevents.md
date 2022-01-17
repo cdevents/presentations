@@ -1,3 +1,3 @@
 # TODO
 
-This document is where the link tiny.cc/talktocdevents points to.
+This document is where the link tinyurl.com/talktocdevents points to.
