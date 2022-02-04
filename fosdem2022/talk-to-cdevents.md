@@ -2,7 +2,7 @@
 
 Welcome!
 
-The [CDEvents project](https://cdevents.dev) needs your help to understand how we best can serve the needs of the community in our work to build the CDEvents [specification](https://github.com/cdevents/spec), build proof-of-concepts and build integrations and extensions to existing projects.
+The [CDEvents project](https://cdevents.dev) needs your help to better understand how we best can serve the needs of the community in our work to build the CDEvents [specification](https://github.com/cdevents/spec), build proof-of-concepts and build integrations and extensions to existing projects.
 
 ## Take our survey
 
@@ -14,7 +14,7 @@ We invite everyone to answer our [survey](https://forms.gle/jBmzTtZFYMbN2wb57) t
 
 ## Join the conversation
 
-The [`#cdevents` Slack channel](https://cdeliveryfdn.slack.com/archives/C030SKZ0F4K) in the CD Foundation Slack workspace is tne primary communication channel for the CDEvents project. Here you can reach the maintainers, contributors and interested parties of the project.
+The [`#cdevents` Slack channel](https://cdeliveryfdn.slack.com/archives/C030SKZ0F4K) in the CD Foundation Slack workspace is the primary communication channel for the CDEvents project. Here you can reach the maintainers, contributors and interested parties of the project.
 
 In the [`#sig-events` Slack Channel](https://cdeliveryfdn.slack.com/archives/C0151BTKEJX) in the same workspace, you can talk to (and maybe even join?) the _Events in CI/CD Special Interest Group_ ([SIG Events](https://github.com/cdfoundation/sig-events)) which works to support and promote the use of events to further interoperability and observability in CI/CD systems.
 
