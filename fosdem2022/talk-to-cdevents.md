@@ -16,7 +16,7 @@ We invite everyone to answer our [survey](https://forms.gle/jBmzTtZFYMbN2wb57) t
 
 The [`#cdevents` Slack channel](https://cdeliveryfdn.slack.com/archives/C030SKZ0F4K) in the CD Foundation Slack workspace is tne primary communication channel for the CDEvents project. Here you can reach the maintainers, contributors and interested parties of the project.
 
-In the [`#sig-events` Slack Channel]() in the same workspace, you can talk to (and maybe even join?) the _Events in CI/CD Special Interest Group_ ([SIG Events](https://github.com/cdfoundation/sig-events)) which works to support and promote the use of events to further interoperability and observability in CI/CD systems.
+In the [`#sig-events` Slack Channel](https://cdeliveryfdn.slack.com/archives/C0151BTKEJX) in the same workspace, you can talk to (and maybe even join?) the _Events in CI/CD Special Interest Group_ ([SIG Events](https://github.com/cdfoundation/sig-events)) which works to support and promote the use of events to further interoperability and observability in CI/CD systems.
 
 Come say hello!
 
