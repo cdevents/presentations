@@ -171,7 +171,7 @@ class:
 backgroundColor: #FFF
 -->
 
-![bg auto](3rdPartyLogos/cdevents-draft.png)
+![width:700px](cdevents_horizontal-color.svg)
 
 <!-- Enter the CDEvents project.
 Now that we're recording, the logo is almost finalized. We'll update the slides with the final version of the logo as soon as it's available.-->
