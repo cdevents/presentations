@@ -79,8 +79,8 @@ class:
 * ### Know about the CDEvents project
 * ### Share your Glue-code story: tinyurl.com/talktocdevents
 
-<!--  TODO: Update
-Today we're in the FOSDEM CI/CD devroom, so most of you are probably familiar to some degree with the concept of continuous delivery.
+<!--
+Today we're in CDF meetup, so most of you are probably familiar to some degree with the concept of continuous delivery.
 Today we we'll focus on events in the continuous delivery space and how do we use them to solve the glue-code issue, and more. We'll also introduce the CDEvents project, specification and community.
 We have a few use cases lined up to present, and we'd love to hear your story as well. Do you use multiple platforms in your CD setup? Which ones? Do they talk to each other and how? Use the link from the slides and in the chat to tell us your story.
 We'd love also for you to join one of our working groups and discuss your use cases or how you use events in your setup.
@@ -172,11 +172,9 @@ class:
 backgroundColor: #FFF
 -->
 
-![bg auto](3rdPartyLogos/cdevents-draft.png)
+![bg auto](3rdPartyLogos/cdevents_horizontal-color.png)
 
-<!-- Enter the CDEvents project.
-TODO: Update
-Now that we're recording, the logo is almost finalized. We'll update the slides with the final version of the logo as soon as it's available.-->
+<!-- Enter the CDEvents project.-->
 
 ---
 <!-- Andrea -->
@@ -195,8 +193,8 @@ class:
 - ## In progress :)
 - ## [github.com/cdevents](https://github.com/cdevents)
 
-<!-- TODO: Update
-At the time we are recording, CDEvents is the latest addition to the CDF incubating projects. CDEvents aims to be the common language the CD ecosystem events, so it provides a vocabulary, a specification as well as SDKs. It's work in progress but already a few projects provide experimental support for it.-->
+<!--
+CDEvents is the latest addition to the CDF incubating projects. CDEvents aims to be the common language the CD ecosystem events, so it provides a vocabulary, a specification as well as SDKs. It's work in progress but already a few projects provide experimental support for it.-->
 ---
 <!-- Andrea -->
 
@@ -515,7 +513,7 @@ class:
 # We want to hear from YOU!
 
 [tinyurl.com/talktocdevents](https://tinyurl.com/talktocdevents)
-<!-- TODO: Update
+<!--
 Fundamentally the purpose of CDEvents is to become something that helps YOU. So, something we really need right now is to learn more about the pain points and needs that YOU have in your day-to-day, and what you see as upcoming challenges. Please get in touch! -->
 
 ---
