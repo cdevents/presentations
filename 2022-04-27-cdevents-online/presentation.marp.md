@@ -85,7 +85,7 @@ Today we'll focus on events in the continuous delivery space and how do we use t
 We'll also introduce the CDEvents project, specification and community.
 We have a few use cases lined up to present, and we'd love to hear your story as well.
 Do you use multiple platforms in your CD setup? Which ones? Do they talk to each other and how?
-Join us at the Events Special Interest Group and tell us your story.
+Join us at our community meetings and tell us your story.
 But let's get started - Erik -->
 ---
 <!-- Erik -->
@@ -174,7 +174,7 @@ class:
 backgroundColor: #FFF
 -->
 
-![bg auto](3rdPartyLogos/cdevents_horizontal-color.png)
+![bg fit](3rdPartyLogos/cdevents_horizontal-color.png)
 
 <!-- Enter the CDEvents project.-->
 
