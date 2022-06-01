@@ -31,7 +31,7 @@ class:
 
 ####
 
-#### Andrea Frittoli, IBM. Eric Sternerson, doWhile
+#### Andrea Frittoli, IBM. Erik Sternerson, doWhile
 
 ---
 <!--
@@ -103,4 +103,4 @@ _footer: 'cdCon | 07.06.2022'
 ##
 ##
 
-#### Andrea Frittoli, IBM. Eric Sternerson, doWhile
+#### Andrea Frittoli, IBM. Erik Sternerson, doWhile
