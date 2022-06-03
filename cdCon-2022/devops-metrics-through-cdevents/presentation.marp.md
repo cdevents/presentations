@@ -100,6 +100,59 @@ Andrea & Erik? We could split, some metrics each
 
 ---
 
+# Deployment Frequency
+
+<!-- Notes
+
+Let's take a few examples:
+- kubectl or another deployment tool in a Tekton Task
+- gitops tool like ArgoCD and Flux
+- spinnaker
+- keptn
+
+The relevant data here is:
+- environment (deployment event)
+- artifact name (deployment event)
+
+-->
+
+---
+
+# Lead Time for Changes
+
+<!-- Notes
+
+Examples:
+- Kaniko, Buildah
+- Tekton, Jenkins, Shipwright
+
+Assuming a single artifact, single branch, how this metric is
+calculated still depends on the versioning scheme used for the
+artifact. No back-porting means that a change is always included
+in the next build after to the change is merged, and in all builds
+after that. If the build model is more complex, we must rely on the
+change ID, the latest change ID from the build, and ask the SCM if
+the change ID was merged before the build change ID.
+
+The relevant data is:
+- the timestamp (change and build events)
+- the repository (change and build events)
+- the change ID (change event)
+- the latest change ID (build event)
+
+(TBD)
+
+-->
+
+# Change Failure Rate
+
+---
+
+# Time to Restore Service
+
+---
+
+---
 # Key takeaways
 
 ---
