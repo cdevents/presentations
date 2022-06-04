@@ -92,10 +92,11 @@ Andrea
 -->
 
 <!-- Notes
-- Four slides, one per metric.
+- 4+ slides, one or more per metric.
 - For each metric show a demo and/or example CDEvents relevant for the metric and/or diagram.
 - Spend some time on the data in events, discuss how it can be used to correlate events.
-Andrea & Erik? We could split, some metrics each
+
+Andrea
 -->
 
 ---
@@ -114,6 +115,7 @@ The relevant data here is:
 - environment (deployment event)
 - artifact name (deployment event)
 
+Erik
 -->
 
 ---
@@ -123,7 +125,7 @@ The relevant data here is:
 <!-- Notes
 
 Examples:
-- Kaniko, Buildah
+- Kaniko, Buildah for container images
 - Tekton, Jenkins, Shipwright
 
 Assuming a single artifact, single branch, how this metric is
@@ -137,20 +139,42 @@ the change ID was merged before the build change ID.
 The relevant data is:
 - the timestamp (change and build events)
 - the repository (change and build events)
-- the change ID (change event)
 - the latest change ID (build event)
+- the change ID (change event)
 
-(TBD)
+Deployment tools, that Erik introduced, take a specific build and
+deploy it to production. The artifact name is not enough, we need
+the artifact ID so that we may associate a specific artifact and thus
+specific changes.
 
+The relevant data is:
+- the artifact ID (deploy and build events)
+
+In real life, we will often need to consider composition scenarios,
+where an artifact is not directly deployed, but it's used instead to
+build a composite artifact or collection of artifacts (release).
+
+We started investigating how to define such scenarios in CDEvents,
+exploring the idea of composition.
+
+Andrea
 -->
 
 # Change Failure Rate
 
+<!--
+
+Erik
+-->
 ---
 
 # Time to Restore Service
 
----
+<!--
+
+
+Andrea
+-->
 
 ---
 # Key takeaways
