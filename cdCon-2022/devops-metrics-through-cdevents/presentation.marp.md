@@ -126,7 +126,7 @@ CDEvents involved in this work. -->
 
 <!-- The Interoperability special interests group of the Continuous Delivery
 foundation can probably be seen as the "driver" of establishing this common
-language. 
+language.
 
 This group does a lot of work defining and establishing terms for
 similar concepts across the CI/CD ecosystem, and a lot of these terms pop up in
@@ -137,7 +137,7 @@ the CDEvents project in one way or another.
 
 <!-- The Events special interest group spawned out of the interoperability
 group in {TODO DATE late 2020} as a workgroup focusing specifically on a
-vocabulary for events in CI/CD. 
+vocabulary for events in CI/CD.
 
 It became a full SIG {TODO DATE about a year later}, and is the root of...
  -->
@@ -166,16 +166,16 @@ that help others send and receive such events.
 
 ![bg contain](images/spec-sdk-pocs-1-extra.svg)
 
-<!-- The CDEvents spec declares a number of events that represents things that 
-may happen in CI/CD, such as a change having been merged, a task having been 
-run or a new verison of a service having been deployed.
+<!-- The CDEvents spec declares a number of events that represents things that
+may happen in CI/CD, such as a change having been merged, a task having been
+run or a new version of a service having been deployed.
 
 The spec also defines what data can or must be sent for such events, typically
 data needed by the receivers of the events.
 
 And finally, as CDEvents is based on CloudEvents, the spec also provides
 rules and guidelines for how to use the attributes provided by the CloudEvents
-spex, such as source and subject.
+specs, such as source and subject.
  -->
 
 ---
@@ -196,8 +196,8 @@ for which we have an SDK, we can get quite a lot of help on the way. -->
 
 ![bg contain](images/spec-sdk-pocs-3.svg)
 
-<!-- Finally, with the SDKs, we can wokr on integratins CDEvents into 
-new and existing tools and solutions such as your Jenkinses, Argos, 
+<!-- Finally, with the SDKs, we can work on integrating CDEvents into
+new and existing tools and solutions such as your Jenkinses, Argos,
 Keptns and Tektons, and set up various proof-of-concepts
 to test out new ideas and help drive the specification forward. -->
 
@@ -227,9 +227,9 @@ by members of the community for the projects  -->
 
 # CDEvents' goals
 
-<!-- Lastly about CDEvents, I want to just very briefly cover the two main 
-areas that we want to adress with our project. We have covered these goals
-in way more detail in previous talks, but for the purpose of this talk, 
+<!-- Lastly about CDEvents, I want to just very briefly cover the two main
+areas that we want to address with our project. We have covered these goals
+in way more detail in previous talks, but for the purpose of this talk,
 our two main goals are... -->
 
 ---
@@ -243,16 +243,16 @@ them speak a common language. -->
 
 # Observability
 
-<!-- And second, and the most relevant for this talk, observabiltiy,
+<!-- And second, and the most relevant for this talk, observability,
 providing both directives on what to send, as well as when to send it.
 
 Through observability comes a great opportunity for building metrics,
-and the main focus today is DevOps metrics. Andrea, do you want to 
+and the main focus today is DevOps metrics. Andrea, do you want to
 tell us a bit about those? -->
 
 ---
 
-# DevOps (DORA) Metrics
+# DevOps Metrics
 
 <!-- TODO
 A couple of slides
@@ -261,6 +261,45 @@ A couple of slides
 -->
 
 <!-- Notes
+Thanks Erik for the great introduction about CDEvents.
+
+The State of the DevOps Report, published by Puppet, has been looking at
+how organization implement DevOps over the years. Already since 2013
+the report had identified a set of metrics which describe measurable
+outcome of organizations implementing DevOps practices.
+
+Andrea
+-->
+
+---
+
+<!--
+_class:
+ - invert
+-->
+
+# DORA Metrics
+
+* Deployment Frequency
+* Lead Time for Changes
+* Change Failure Rate
+* Time to Restore Service
+
+<!-- Notes
+
+The four metrics used by the report are those identified by the DORA group.
+These metrics span the entire software lifecycle. They do not necessarily
+cover all aspects of DevOps, and organizations may define other metrics as
+required. Something that is apparent from this list of metrics is that no
+single tool will produce the data required to calculate them.
+
+Having a common language like CDEvents spoken by different tools would
+simplify the analysis of data required to calculate the metrics.
+Our goal is to foster an ecosystem of tools that will be able to do this
+for systems that can produce CDEvents.
+
+[TBD] Plug in new tools. Let each tool focus on one thing it does well.
+
 Andrea
 -->
 
@@ -272,9 +311,9 @@ Andrea
 -->
 
 <!-- Notes
-- 4+ slides, one or more per metric.
-- For each metric show a demo and/or example CDEvents relevant for the metric and/or diagram.
-- Spend some time on the data in events, discuss how it can be used to correlate events.
+
+Let's now dive into each metric, to see which CDEvent types and data can
+be used to produce the data required.
 
 Andrea
 -->
@@ -282,6 +321,11 @@ Andrea
 ---
 
 # Deployment Frequency
+
+<!--
+class:
+ - invert
+-->
 
 <!-- Notes
 
@@ -340,6 +384,8 @@ exploring the idea of composition.
 Andrea
 -->
 
+---
+
 # Change Failure Rate
 
 <!--
@@ -350,8 +396,34 @@ Erik
 
 # Time to Restore Service
 
-<!--
+<!-- Note
 
+A service degradation may be solved in a number of ways:
+- a rollback or the deployment of a newer version
+- scaling, horizontally or vertically
+- a change external to the system that suffered the degradation (change in load,
+  a broken dependency is fixed, etc)
+
+The time to restore service may be or may be not associated with a change in the
+system, thus we need to model that in the events.
+
+To calculate the time to restore service we therefore require events that are
+specific to degradation of a service as well as its restoration.
+Where relevant, such events may include the ID of a deployment or a change that
+solved the issues, but such data will not be mandatory.
+
+In many instances the resolution may not be automated at all. The CDEvents SDKs
+(or CLI) may be used to provide a workflow for engineers to record the data
+required to keep track of the "time to restore service".
+
+Keptn provides abstractions, automation and events related to SLIs, SLOs and
+problems. That enables generating events valuable for tracking the time to
+restore service metric. The CDEvents project is evaluating whether to adopt
+the Keptn model for its own application lifecycle type of events.
+
+Other tools like Knative implement scaling based on metrics, so it might be
+possible for Knative autoscaler to send CDEvents about issues starting and being
+resolved.
 
 Andrea
 -->
