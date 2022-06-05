@@ -15,7 +15,7 @@ class:
 
 # cdCon 2022
 
-#### Building DevOps metrics for your choice of CD tools through CDEvent
+#### Building DevOps metrics for your choice of CD tools through CDEvents
 
 ---
 # A long long time ago
@@ -59,7 +59,7 @@ My name is Erik Sternerson...
 ---
 # cdCon 2022
 
-#### Building DevOps metrics for your choice of CD tools through CDEvent
+#### Building DevOps metrics for your choice of CD tools through CDEvents
 
 ####
 
@@ -158,41 +158,48 @@ that help others send and receive such events.
 
 ---
 
-# The spec
+![bg contain](images/spec-sdk-pocs-1.svg)
 
 <!-- Lets dig in to the spec a bit first. -->
 
-<!-- TODO Add a circular diagram where the spec feeds into the SDKs,
-the SDKs feed into the integrations and PoCs and they feed back to the spec.
-Show this step by step for spec, SDKs and PoCs. -->
+---
+
+![bg contain](images/spec-sdk-pocs-1-extra.svg)
+
+<!-- The CDEvents spec declares a number of events that represents things that 
+may happen in CI/CD, such as a change having been merged, a task having been 
+run or a new verison of a service having been deployed.
+
+The spec also defines what data can or must be sent for such events, typically
+data needed by the receivers of the events.
+
+And finally, as CDEvents is based on CloudEvents, the spec also provides
+rules and guidelines for how to use the attributes provided by the CloudEvents
+spex, such as source and subject.
+ -->
 
 ---
 
-<!-- TOOD: Add multi-image diagram showing how the spec declares multiple event 
-types, their event data and how it uses the CloudEvents base -->
-
----
-
-# The SDKs
+![bg contain](images/spec-sdk-pocs-2.svg)
 
 <!-- Given this spec, we can now work on a set of SDKs for multiple
 programming languages and platforms. -->
 
 ---
 
-<!-- TOOD: Add multi-image code example from Go SDK -->
+![bg contain](images/spec-sdk-pocs-2-extra.svg)
+
+<!-- So if we want to send an event such as ServiceDeployed in a language
+for which we have an SDK, we can get quite a lot of help on the way. -->
 
 ---
 
-# The integrations and PoCs
+![bg contain](images/spec-sdk-pocs-3.svg)
 
 <!-- Finally, with the SDKs, we can wokr on integratins CDEvents into 
-new and existing tools and solutions, and set up various proof-of-concepts
+new and existing tools and solutions such as your Jenkinses, Argos, 
+Keptns and Tektons, and set up various proof-of-concepts
 to test out new ideas and help drive the specification forward. -->
-
----
-
-<!-- TOOD: Add multi-image code example from Go SDK -->
 
 ---
 
@@ -212,9 +219,36 @@ support, input and feedback from the wider community. -->
 
 * ## Project communities
 
-<!-- Several integrations and proof-of-concepts thus far have been done 
-wholly or partly outside of the CDEvents project itself, by members of the
-communit for the projects  -->
+<!-- Several integrations and proof-of-concepts and at least one of the SDKs
+thus far have been done wholly or partly outside of the CDEvents project itself,
+by members of the community for the projects  -->
+
+---
+
+# CDEvents' goals
+
+<!-- Lastly about CDEvents, I want to just very briefly cover the two main 
+areas that we want to adress with our project. We have covered these goals
+in way more detail in previous talks, but for the purpose of this talk, 
+our two main goals are... -->
+
+---
+
+# Interoperability
+
+<!-- First, interoperability, making things work together by having
+them speak a common language. -->
+
+---
+
+# Observability
+
+<!-- And second, and the most relevant for this talk, observabiltiy,
+providing both directives on what to send, as well as when to send it.
+
+Through observability comes a great opportunity for building metrics,
+and the main focus today is DevOps metrics. Andrea, do you want to 
+tell us a bit about those? -->
 
 ---
 
