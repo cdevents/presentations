@@ -81,11 +81,11 @@ _class:
 Andrea
 -->
 
-* ## Learn About CDEvents
+- ## Learn About CDEvents
 
-* ## Learn About DevOps Metrics
+- ## Learn About DevOps Metrics
 
-* ## How do they fit together
+- ## How do they fit together
 
 ---
 
@@ -150,7 +150,7 @@ that help others send and receive such events.
 
 ---
 
-![bg contain](images/spec-sdk-pocs-1.svg)
+![bg contain](images/spec-sdk-poc-1.svg)
 
 <!-- Lets dig in to the spec a bit first. -->
 
@@ -415,6 +415,24 @@ exploring the idea of composition.
 
 Andrea
 -->
+
+---
+
+![bg contain](images/cdevents-lead-time-for-changes.svg)
+
+<!--  -->
+
+---
+
+![bg contain](images/cdevents-lead-time-for-changes-build.svg)
+
+<!--  -->
+
+---
+
+![bg contain](images/cdevents-lead-time-for-changes-deploy.svg)
+
+<!--  -->
 
 ---
 
