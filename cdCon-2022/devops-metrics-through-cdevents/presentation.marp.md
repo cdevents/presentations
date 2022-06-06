@@ -246,12 +246,6 @@ tell us a bit about those? -->
 
 # DevOps Metrics
 
-<!-- TODO
-A couple of slides
-- Intro to DevOps metrics, high performing teams, measuring performance
-- Specifically, DORA metrics
--->
-
 <!-- Notes
 Thanks Erik for the great introduction about CDEvents.
 
@@ -279,16 +273,10 @@ _class:
 
 <!-- Notes
 
-The four metrics used by the report are those identified by the DORA group.
-These metrics span the entire software lifecycle. They do not necessarily
-cover all aspects of DevOps, and organizations may define other metrics as
-required. Something that is apparent from this list of metrics is that no
-single tool will produce the data required to calculate them.
+The four metrics used by the report are those identified by the DORA (DevOps Research and assessment group.
+These metrics span the entire software lifecycle. They do not necessarily cover all aspects of DevOps, and organizations may define other metrics as required. Something that is apparent from this list of metrics is that no single tool will produce the data required to calculate them.
 
-Having a common language like CDEvents spoken by different tools would
-simplify the analysis of data required to calculate the metrics.
-Our goal is to foster an ecosystem of tools that will be able to do this
-for systems that can produce CDEvents.
+Having a common language like CDEvents spoken by different tools would simplify the analysis of data required to calculate the metrics. Our goal is to foster an ecosystem of tools that will be able to do this for systems that can produce CDEvents.
 
 [TBD] Plug in new tools. Let each tool focus on one thing it does well.
 
@@ -299,13 +287,10 @@ Andrea
 
 # Metrics through CDEvents
 
-<!--TODO
--->
 
 <!-- Notes
 
-Andrea: Let's now dive into each metric, to see which CDEvent types and data can
-be used to produce the data required.
+Andrea: Let's now dive into each metric, to see which CDEvent types and data can be used to produce the data required.
 
 EriK: Ok, with that excellent recap from Andrea on the four metrics we are
 talking about today, lets move on to looking at how CDEvents can help
@@ -380,38 +365,7 @@ are deployed, and would thus be able to produce the Deployment Frequency metric.
 
 <!-- Notes
 
-Examples:
-- Kaniko, Buildah for container images
-- Tekton, Jenkins, Shipwright
-
-Assuming a single artifact, single branch, how this metric is
-calculated still depends on the versioning scheme used for the
-artifact. No back-porting means that a change is always included
-in the next build after to the change is merged, and in all builds
-after that. If the build model is more complex, we must rely on the
-change ID, the latest change ID from the build, and ask the SCM if
-the change ID was merged before the build change ID.
-
-The relevant data is:
-- the timestamp (change and build events)
-- the repository (change and build events)
-- the latest change ID (build event)
-- the change ID (change event)
-
-Deployment tools, that Erik introduced, take a specific build and
-deploy it to production. The artifact name is not enough, we need
-the artifact ID so that we may associate a specific artifact and thus
-specific changes.
-
-The relevant data is:
-- the artifact ID (deploy and build events)
-
-In real life, we will often need to consider composition scenarios,
-where an artifact is not directly deployed, but it's used instead to
-build a composite artifact or collection of artifacts (release).
-
-We started investigating how to define such scenarios in CDEvents,
-exploring the idea of composition.
+The lead time for changes considers data that spans from the SCM system down to the deployment one.
 
 Andrea
 -->
@@ -420,19 +374,40 @@ Andrea
 
 ![bg contain](images/cdevents-lead-time-for-changes.svg)
 
-<!--  -->
+<!--  Notes
+
+Starting with the SCM, regardless of the tool we use, there will be a concept of repository which must be part of any Change related event in CDEvents. The timestamp of the change a second mandatory piece of information.
+
+Let's for now assume a single artifact, single branch scenario.
+
+-->
 
 ---
 
 ![bg contain](images/cdevents-lead-time-for-changes-build.svg)
 
-<!--  -->
+<!--  Notes
+
+The build system creates an artifact from a subset of the changes merged into the SCM. If we could assume a monotonic relation over time between changes and build, repository and timestamp would be enough to know which change is included in which build.
+In most cases though we will need to consider change IDs, and expect Artifact events to include the last change ID included in the build.
+To discover if a change is included in a build, the observer will need to ask the SCM if a change ID was merged "before" the last change ID included in the build.
+
+-->
 
 ---
 
 ![bg contain](images/cdevents-lead-time-for-changes-deploy.svg)
 
-<!--  -->
+<!--  Notes
+
+The build system may use different tools depending on the type of artifact and on the preferences of the team responsible for it. In all cases the build process must outcome an artifact ID which uniquely identifies the artifact. This ID is used by the deployment system to obtain the artifact to deploy, and is then reported back in the Service replated CDEvents.
+
+We started with the single artifact scenario, however in real life, we will often need to consider composition scenarios, where an artifact is not directly deployed, but it's used instead to build a composite artifact or collection of artifacts (release).
+
+We started investigating how to define such scenarios in CDEvents,
+exploring the idea of composition.
+
+-->
 
 ---
 
