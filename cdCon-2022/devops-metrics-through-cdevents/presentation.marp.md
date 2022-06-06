@@ -24,7 +24,7 @@ class:
 Erik
 
 In October of 2012 I was working in the telecom industry and I had just gotten
-involved in one of the earlier CI/CD efforts in my workplace.
+involved in one of the early CI/CD efforts in my workplace.
 
 I got my manager to explain the current situation and he said, "Well, Erik, to
 start with we make releases every six months, right? The development of those
@@ -41,7 +41,7 @@ So, this means developers frequently need to wait a few months for their work to
 be fully tested. And, of course, it is unlikely that whatever they are working
 on right now is directly related to what is being verified by the verification
 team. If a bug is discovered, developers need to make the mother of all
-context switches to find and fix it. Not at all good.
+mental context switches to find and fix the bug. Not at all good.
 
 My manager then proclaimed "We need to bring this time, the time from
 development to verification and release, down from a few months to a few hours."
@@ -91,15 +91,7 @@ Andrea
 
 # CDEvents
 
-<!-- TODO
-A couple of slides
-- Project goals (and history?)
-- Use cases
--->
-
-<!-- Notes
-Erik
--->
+<!-- Let's first look into what CDEvents is. -->
 
 ---
 
@@ -136,17 +128,17 @@ the CDEvents project in one way or another.
 * ## CDF SIG Events
 
 <!-- The Events special interest group spawned out of the interoperability
-group in {TODO DATE late 2020} as a workgroup focusing specifically on a
+group in late 2020 as a workgroup focusing specifically on a
 vocabulary for events in CI/CD.
 
-It became a full SIG {TODO DATE about a year later}, and is the root of...
+It became a full SIG about a year later, and is the root of...
  -->
 
 ---
 
 # CDEvents
 
-<!-- The CDEvents project, and its concrete goal: -->
+<!-- The CDEvents project, and its more concrete goal: -->
 
 ---
 
@@ -326,11 +318,6 @@ Erik or Andrea ^_^
 
 # Deployment Frequency
 
-<!--
-class:
- - invert
--->
-
 <!-- Notes
 Erik: The first one, which may be the most straightforward one,
 is Deployment Frequency.
@@ -353,25 +340,39 @@ Erik
 
 ![bg contain](images/depfreq-1.svg)
 
-<!--  -->
+<!-- Say that we have this pretty simple setup with an orchestrator helping us
+deploy our application to an environmnt.
+
+This orchestrator could be many things, for instance kubectl controlled via Tekton,
+or some other DevOps automation tools like ArgoCD and Keptn, or maybe Spinnaker.
+ -->
 
 ---
 
 ![bg contain](images/depfreq-2.svg)
 
-<!--  -->
+<!-- Anyway, say that we have a new version of our application coming in.
+
+We want to upgrade our existing deployment, and maybe we've also made a 
+configuration change to state that we want an additional deployment
+in a new environment. -->
 
 ---
 
 ![bg contain](images/depfreq-3.svg)
 
-<!--  -->
+<!-- In CDEvents, we have two events to cover both these cases,
+ServiceUpgraded and ServiceDeployed. -->
 
 ---
 
 ![bg contain](images/depfreq-4.svg)
 
-<!--  -->
+<!-- Given that the events state both what was deployed or upgraded,
+and to what new version, and to what environment, these events are 
+sufficient for an observer to be able to detect how often new versions 
+are deployed, and would thus be able to produce the Deployment Frequency metric.
+-->
 
 ---
 
@@ -419,13 +420,137 @@ Andrea
 
 # Change Failure Rate
 
-<!--
-
-The next metric, Change Failure Rate, is an interesting one from an events
+<!-- The next metric, Change Failure Rate, is an interesting one from an events
 perspective, so lets look into that.
-
-Erik
 -->
+
+---
+
+# # Deployments / # Incidents
+
+<!-- This metric can be simplified as the number of deployments we have over
+the number of incidents that occur for these deployments. -->
+
+---
+
+![bg contain](images/depfreq-4.svg)
+
+<!-- Counting he number of deployments is actually pretty straightforward 
+using the ServiceDeployed and ServiceUpgraded events we looked at earlier.
+
+Not much to worry about there, so lets have a look at incidents.
+ -->
+
+---
+
+# Incidents
+
+<!-- Counting incidents is a bit more involved. -->
+
+---
+<!--
+_class:
+ - invert
+-->
+
+# What can cause an incident?
+
+<!-- First of all, incidents may have many different causes. -->
+
+* ## Application error (bug!)
+
+<!-- It could be a bug in the application or service we are deploying. -->
+
+* ## Configuration error
+
+<!-- It could be a mistake in the configuration of the application. -->
+
+* ## Environment error
+
+<!-- It could also be something entirely unrelated to the application itself,
+such as a network outage or other type of environment errors. -->
+
+* ## ...
+
+<!-- And the list of causes doesn't stop there. -->
+
+---
+<!--
+_class:
+ - invert
+-->
+
+# Who can discover an incident?
+
+<!-- Given the variety of causes of incidents, there will also be many 
+different sources that can discover these issues. -->
+
+* ## Orchestrator
+
+<!-- The system that deploys your application may notice that it doesn't come
+up properly after deployment. -->
+
+* ## Monitoring system
+
+<!-- A monitoring system may detect that your application har degraded
+performance -->
+
+* ## Application itself
+
+<!-- Of course the application itself may discover that it is not doing
+well -->
+
+* ## Users / DevOps team
+
+<!-- There may even be manual reports by users or some operations team,
+maybe into a bugtracker or similar. 
+
+Given that we have so many possible sources, what can should be done
+when an incident is discovered? -->
+
+---
+
+# Send an Incident event!
+
+<!-- We send an Incident event!
+
+Now, this event type is new for us, in fact it hasn't formally made it
+into the spec yet, but we have some prior art which Andrea will
+mention a bit later. -->
+
+---
+
+![bg contain](images/cfr-1.svg)
+
+<!-- Anyway, given the same deployment we saw before, with an orchestrator
+and this time also a monitor (like Prometheus)/ -->
+
+---
+
+![bg contain](images/cfr-2.svg)
+
+<!-- We could have Incidents reported by the orchestrator ... -->
+
+---
+
+![bg contain](images/cfr-3.svg)
+
+<!-- ... by the monitoring system ... -->
+
+---
+
+![bg contain](images/cfr-4.svg)
+
+<!-- ... and by the application itself ... -->
+
+---
+
+![bg contain](images/cfr-5.svg)
+
+<!-- But all of these could be seen by an observer which
+could then determine the total number of incidents and produce
+the desired metric. -->
+
 ---
 
 # Time to Restore Service
@@ -463,31 +588,51 @@ Andrea
 -->
 
 ---
+
 # Key takeaways
 
----
-
-# TBW
-<!-- Notes
-
-Something along the lines of:
-
-- Metrics are hard regardless
-- A common language can help
-- Call to action
--->
+<!-- We're nearing the end of the talk, so let's wrap up with a few key
+takeaways. -->
 
 ---
 
-# TBW
+# Metrics are tricky
+
+<!-- As we've talked about, metrics may require several different pieces of
+information, and these pieces may come from many different sources.
+
+Bringing everything together can be tricky. -->
 
 ---
 
-# TBW
+# A common language helps!
+
+<!-- Having then a common language and a standardized way of distributing
+information in this common language can really help, and this is the aim
+of the CDEvents project. -->
+
+---
+
+# A call to action
+
+<!-- And to make this possible, the CDEvents project and community can
+really benefit from your involvement, in anything ranging from giving
+feedback and providing your use cases, to working with us on the spec
+or developing SDKs and integrations. -->
+
+---
+
+# cdevents.dev
+
+<!-- You can find our work, and how to get involved, on cdevents.dev -->
 
 ---
 
 # Thank you!
+
+<!-- With that, we'd like to thank you all for attending the talk,
+I've been Erik Sternerson, this is Andrea Frittoli, and we'd now
+like to open the floor for questions. -->
 
 ---
 <!--
