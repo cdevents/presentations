@@ -164,7 +164,7 @@ that help others send and receive such events.
 
 ---
 
-![bg contain](images/spec-sdk-pocs-1-extra.svg)
+![bg contain](images/spec-sdk-poc-1-extra.svg)
 
 <!-- The CDEvents spec declares a number of events that represents things that
 may happen in CI/CD, such as a change having been merged, a task having been
@@ -180,21 +180,21 @@ specs, such as source and subject.
 
 ---
 
-![bg contain](images/spec-sdk-pocs-2.svg)
+![bg contain](images/spec-sdk-poc-2.svg)
 
 <!-- Given this spec, we can now work on a set of SDKs for multiple
 programming languages and platforms. -->
 
 ---
 
-![bg contain](images/spec-sdk-pocs-2-extra.svg)
+![bg contain](images/spec-sdk-poc-2-extra.svg)
 
 <!-- So if we want to send an event such as ServiceDeployed in a language
 for which we have an SDK, we can get quite a lot of help on the way. -->
 
 ---
 
-![bg contain](images/spec-sdk-pocs-3.svg)
+![bg contain](images/spec-sdk-poc-3.svg)
 
 <!-- Finally, with the SDKs, we can work on integrating CDEvents into
 new and existing tools and solutions such as your Jenkinses, Argos,
@@ -312,10 +312,14 @@ Andrea
 
 <!-- Notes
 
-Let's now dive into each metric, to see which CDEvent types and data can
+Andrea: Let's now dive into each metric, to see which CDEvent types and data can
 be used to produce the data required.
 
-Andrea
+EriK: Ok, with that excellent recap from Andrea on the four metrics we are
+talking about today, lets move on to looking at how CDEvents can help
+establish these metrics.
+
+Erik or Andrea ^_^
 -->
 
 ---
@@ -328,7 +332,10 @@ class:
 -->
 
 <!-- Notes
+Erik: The first one, which may be the most straightforward one,
+is Deployment Frequency.
 
+Andrea's earlier notes:
 Let's take a few examples:
 - kubectl or another deployment tool in a Tekton Task
 - gitops tool like ArgoCD and Flux
@@ -341,6 +348,30 @@ The relevant data here is:
 
 Erik
 -->
+
+---
+
+![bg contain](images/depfreq-1.svg)
+
+<!--  -->
+
+---
+
+![bg contain](images/depfreq-2.svg)
+
+<!--  -->
+
+---
+
+![bg contain](images/depfreq-3.svg)
+
+<!--  -->
+
+---
+
+![bg contain](images/depfreq-4.svg)
+
+<!--  -->
 
 ---
 
@@ -389,6 +420,9 @@ Andrea
 # Change Failure Rate
 
 <!--
+
+The next metric, Change Failure Rate, is an interesting one from an events
+perspective, so lets look into that.
 
 Erik
 -->
