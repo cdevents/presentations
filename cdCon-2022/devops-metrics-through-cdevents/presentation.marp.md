@@ -60,6 +60,13 @@ My name is Erik Sternerson...
 
 #### Andrea Frittoli, IBM. Erik Sternerson, doWhile
 
+<!-- Notes
+
+...and my name is Andrea Frittoli.
+Welcome to Building DevOps metrics for your choice of CD tools through CDEvents
+
+-->
+
 ---
 <!--
 _class:
@@ -74,11 +81,11 @@ _class:
 Andrea
 -->
 
-- ## Learn About CDEvents
+* ## Learn About CDEvents
 
-- ## Learn About DevOps Metrics
+* ## Learn About DevOps Metrics
 
-- ## How do they fit together
+* ## How do they fit together
 
 ---
 
@@ -250,11 +257,18 @@ _class:
 <!-- Notes
 
 The four metrics used by the report are those identified by the DORA (DevOps Research and assessment group.
-These metrics span the entire software lifecycle. They do not necessarily cover all aspects of DevOps, and organizations may define other metrics as required. Something that is apparent from this list of metrics is that no single tool will produce the data required to calculate them.
+These metrics span the entire software lifecycle. They do not necessarily cover all aspects of DevOps, and organizations may define other metrics as required.
+
+* Deployment Frequency
+* Lead Time for Changes
+* Change Failure Rate
+* Time to Restore Service
+
+Something that is apparent from this list of metrics is that no single tool will produce the data required to calculate them.
 
 Having a common language like CDEvents spoken by different tools would simplify the analysis of data required to calculate the metrics. Our goal is to foster an ecosystem of tools that will be able to do this for systems that can produce CDEvents.
 
-[TBD] Plug in new tools. Let each tool focus on one thing it does well.
+Organizations will be able then to switch one of their tools, or add a new one, and as long as it supports CDEvents, metrics will keep working.
 
 Andrea
 -->
@@ -263,16 +277,13 @@ Andrea
 
 # Metrics through CDEvents
 
-
 <!-- Notes
-
-Andrea: Let's now dive into each metric, to see which CDEvent types and data can be used to produce the data required.
 
 EriK: Ok, with that excellent recap from Andrea on the four metrics we are
 talking about today, lets move on to looking at how CDEvents can help
 establish these metrics.
 
-Erik or Andrea ^_^
+Erik
 -->
 
 ---
@@ -488,34 +499,76 @@ Now, this event type is new for us, in fact it hasn't formally made it into the 
 
 # Time to Restore Service
 
+---
+<!--
+_class:
+ - invert
+-->
+
+# What can restore the service?
+
+* ## A rollback or deployment of a newer version
+* ## Configuration change (e.g. scaling)
+* ## A change to an external dependency
+
+</br>
+
+* ## Who generates the events?
+
 <!-- Note
 
 A service degradation may be solved in a number of ways:
 - a rollback or the deployment of a newer version
 - scaling, horizontally or vertically
-- a change external to the system that suffered the degradation (change in load,
-  a broken dependency is fixed, etc)
+- a change external to the system that suffered the degradation (another microservice, networking issues, etc)
 
-The time to restore service may be or may be not associated with a change in the
-system, thus we need to model that in the events.
-
-To calculate the time to restore service we therefore require events that are
-specific to degradation of a service as well as its restoration.
-Where relevant, such events may include the ID of a deployment or a change that
-solved the issues, but such data will not be mandatory.
-
-In many instances the resolution may not be automated at all. The CDEvents SDKs
-(or CLI) may be used to provide a workflow for engineers to record the data
-required to keep track of the "time to restore service".
+As Erik mentioned, incident events are not part of CDEvents yet. Given the number of possible different scenarios, having dedicated incident and incident resolution events is required to calculate the time to restore service metric.
+Data The environment and the service identifiers and the version deployed must be part of all incident resolution events, along with the original incident ID.
+The time to restore service may be or may be not associated with a change in the system, thus the related data will be optional in the events.
 
 Keptn provides abstractions, automation and events related to SLIs, SLOs and
 problems. That enables generating events valuable for tracking the time to
 restore service metric. The CDEvents project is evaluating whether to adopt
 the Keptn model for its own application lifecycle type of events.
 
-Other tools like Knative implement scaling based on metrics, so it might be
-possible for Knative autoscaler to send CDEvents about issues starting and being
-resolved.
+Who generate the incident resolution events?
+Different systems may send events about the same incident resolution, with different amount of context. We plan to allow multiple events in this area that can be collated later by the observer.
+
+Andrea
+-->
+
+---
+
+![bg contain](images/ttrs-1.svg)
+
+<!-- Notes
+
+Events from the orchestrator.
+
+For instance, when using Knative, a service may be scaled up and down based on metrics. A metric degradation that leads to scaling up could generate the incident event, and the Knative autoscaler could send CDEvents about the incident resolution once the scaling up is done.
+
+Andrea
+-->
+
+---
+
+![bg contain](images/ttrs-2.svg)
+<!-- Notes
+
+Events from the monitoring system
+
+Andrea
+-->
+
+---
+
+![bg contain](images/ttrs-3.svg)
+<!-- Notes
+
+Events from the application or a human
+
+In many instances the resolution may not be automated at all. The CDEvents SDKs may be used to provide a workflow for engineers to record the data
+required to keep track of the "time to restore service". This could be integrated for instance in the issue tracking system of choice.
 
 Andrea
 -->
