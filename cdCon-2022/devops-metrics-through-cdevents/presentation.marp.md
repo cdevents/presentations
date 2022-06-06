@@ -585,15 +585,31 @@ We're nearing the end of the talk, so let's wrap up with a few key takeaways. --
 
 # Metrics are tricky
 
-<!-- As we've talked about, metrics may require several different pieces of information, and these pieces may come from many different sources.
+<!-- As we've talked about, metrics may require several different pieces of information, and these pieces may come from many different sources ... -->
 
-Bringing everything together can be tricky. -->
+---
+
+# Metrics are tricky
+
+![bg contain](images/key-takeaway-1.svg)
+
+<!-- ... so bringing all this together to produce the desired metrics can be really tricky. -->
 
 ---
 
 # A common language helps!
 
-<!-- Having then a common language and a standardized way of distributing information in this common language can really help, and this is the aim of the CDEvents project. -->
+![bg contain](images/key-takeaway-1.svg)
+
+<!-- Having then a common language and a standardized way of distributing information in this common language can really help ... -->
+
+---
+
+# A common language helps!
+
+![bg contain](images/key-takeaway-2.svg)
+
+<!-- ... and this is the aim of the CDEvents project. -->
 
 ---
 
