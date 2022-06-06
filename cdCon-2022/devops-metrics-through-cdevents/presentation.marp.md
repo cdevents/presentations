@@ -20,38 +20,31 @@ class:
 ---
 # A long long time ago
 
-<!-- Notes
-Erik
+<!-- Erik
 
-In October of 2012 I was working in the telecom industry and I had just gotten
-involved in one of the early CI/CD efforts in my workplace.
+Back in October of 2012 I was working in the telecom industry and I had just gotten involved in one of the early CI/CD efforts in my workplace.
 
-I got my manager to explain the current situation and he said, "Well, Erik, to
-start with we make releases every six months, right? The development of those
-releases typically start around a year before release, and the releases get
-verified by the verification teams during the last three months before release."
+I got my manager to explain the current situation and he said, 
+"Well, Erik, to start with we make releases every six months, right?
+The development of those releases typically start around a year before release, and the releases get verified by the verification teams during the last three months before release."
+
+So, this means developers frequently need to wait ...
 -->
 
 ---
 # A long long time...
 
-<!-- Notes
+<!-- ... a long long time, like a few months for their work to be fully tested. 
+And, of course, it is unlikely that whatever they are working on right now is directly related to what is being verified by the verification team. 
 
-So, this means developers frequently need to wait a few months for their work to
-be fully tested. And, of course, it is unlikely that whatever they are working
-on right now is directly related to what is being verified by the verification
-team. If a bug is discovered, developers need to make the mother of all
-mental context switches to find and fix the bug. Not at all good.
+If a bug is discovered, developers need to make the mother of all mental context switches to find and fix the bug. 
+Not at all good.
 
-My manager then proclaimed "We need to bring this time, the time from
-development to verification and release, down from a few months to a few hours."
+My manager then proclaimed "We need to bring this time, the time from development to verification and release, down from a few months to a few hours."
 
-I remember thinking "going from months to hours seems like a crazy big step!"
-but I have since been shown over and over again that this step is actually not
-that crazy!
+I remember thinking "going from months to hours seems like a crazy big step!" but I have since been shown over and over again that this step is actually not that crazy!
 
-One factor that really helps taking this step is to understand where our
-bottlenecks are, and for that we need metrics.
+One factor that really helps taking this step is to understand where our bottlenecks are, and for that we need metrics.
 
 My name is Erik Sternerson...
 -->
@@ -97,8 +90,7 @@ Andrea
 
 # Conceptual: Common language
 
-<!-- The conceptual goal of the CDEvents project is to help build a common
-language for CI/CD and surrounding domains.
+<!-- The conceptual goal of the CDEvents project is to help build a common language for CI/CD and surrounding domains.
 
 -->
 
@@ -111,25 +103,18 @@ _class:
 
 # Wider effort
 
-<!-- So I set "help build" just now, and that is because this it is not only
-CDEvents involved in this work. -->
+<!-- So I set "help build" just now, and that is because this it is not only CDEvents involved in this work. -->
 
 * ## CDF SIG Interoperability
 
-<!-- The Interoperability special interests group of the Continuous Delivery
-foundation can probably be seen as the "driver" of establishing this common
-language.
+<!-- The Interoperability special interests group of the Continuous Delivery foundation can probably be seen as the "driver" of establishing this common language.
 
-This group does a lot of work defining and establishing terms for
-similar concepts across the CI/CD ecosystem, and a lot of these terms pop up in
-the CDEvents project in one way or another.
+This group does a lot of work defining and establishing terms for similar concepts across the CI/CD ecosystem, and a lot of these terms pop up in the CDEvents project in one way or another.
  -->
 
 * ## CDF SIG Events
 
-<!-- The Events special interest group spawned out of the interoperability
-group in late 2020 as a workgroup focusing specifically on a
-vocabulary for events in CI/CD.
+<!-- The Events special interest group spawned out of the interoperability group in late 2020 as a workgroup focusing specifically on a vocabulary for events in CI/CD.
 
 It became a full SIG about a year later, and is the root of...
  -->
@@ -144,8 +129,7 @@ It became a full SIG about a year later, and is the root of...
 
 # Concrete: Spec and SDKs
 
-<!-- To build a specification for events in CI/CD, and to build a set of SDKs
-that help others send and receive such events.
+<!-- To build a specification for events in CI/CD, and to build a set of SDKs that help others send and receive such events.
 -->
 
 ---
@@ -158,40 +142,33 @@ that help others send and receive such events.
 
 ![bg contain](images/spec-sdk-poc-1-extra.svg)
 
-<!-- The CDEvents spec declares a number of events that represents things that
-may happen in CI/CD, such as a change having been merged, a task having been
-run or a new version of a service having been deployed.
+<!-- The CDEvents spec declares a number of events that represents things that may happen in CI/CD, such as a change having been merged, a task having been run or a new version of a service having been deployed.
 
-The spec also defines what data can or must be sent for such events, typically
-data needed by the receivers of the events.
+The spec also defines what data can or must be sent for such events, typically data needed by the receivers of the events.
 
-And finally, as CDEvents is based on CloudEvents, the spec also provides
-rules and guidelines for how to use the attributes provided by the CloudEvents
-specs, such as source and subject.
- -->
+And finally, as CDEvents is based on CloudEvents, the spec also provides rules and guidelines for how to use the attributes provided by the CloudEvents specs, such as source and subject.
+-->
 
 ---
 
 ![bg contain](images/spec-sdk-poc-2.svg)
 
-<!-- Given this spec, we can now work on a set of SDKs for multiple
-programming languages and platforms. -->
+<!-- Given this spec, we can now work on a set of SDKs for multiple programming languages and platforms. 
+-->
 
 ---
 
 ![bg contain](images/spec-sdk-poc-2-extra.svg)
 
-<!-- So if we want to send an event such as ServiceDeployed in a language
-for which we have an SDK, we can get quite a lot of help on the way. -->
+<!-- So if we want to send an event such as ServiceDeployed in a language for which we have an SDK, we can get quite a lot of help on the way. 
+-->
 
 ---
 
 ![bg contain](images/spec-sdk-poc-3.svg)
 
-<!-- Finally, with the SDKs, we can work on integrating CDEvents into
-new and existing tools and solutions such as your Jenkinses, Argos,
-Keptns and Tektons, and set up various proof-of-concepts
-to test out new ideas and help drive the specification forward. -->
+<!-- Finally, with the SDKs, we can work on integrating CDEvents into new and existing tools and solutions such as your Jenkinses, Argos, Keptns and Tektons, and set up various proof-of-concepts to test out new ideas and help drive the specification forward. 
+-->
 
 ---
 
@@ -206,41 +183,40 @@ _class:
 
 * ## CDEvents team
 
-<!-- The spec itself is driven by the CDEvents team, but with plenty of
-support, input and feedback from the wider community. -->
+<!-- The spec itself is driven by the CDEvents team, but with plenty of support, input and feedback from the wider community. 
+-->
 
 * ## Project communities
 
-<!-- Several integrations and proof-of-concepts and at least one of the SDKs
-thus far have been done wholly or partly outside of the CDEvents project itself,
-by members of the community for the projects  -->
+<!-- Several integrations and proof-of-concepts and at least one of the SDKs thus far have been done wholly or partly outside of the CDEvents project itself, by members of the project communities for several CI/CD tools.
+-->
 
 ---
 
-# CDEvents' goals
+# What we want to achieve through CDEvents
 
-<!-- Lastly about CDEvents, I want to just very briefly cover the two main
-areas that we want to address with our project. We have covered these goals
-in way more detail in previous talks, but for the purpose of this talk,
-our two main goals are... -->
+<!-- Lastly about CDEvents, I want to just very briefly cover the two main areas that we want to address with our project. 
+
+We have covered these desired achievments in way more detail in previous talks, but for the purpose of this talk, our two main goals are... 
+-->
 
 ---
 
 # Interoperability
 
-<!-- First, interoperability, making things work together by having
-them speak a common language. -->
+<!-- First, interoperability, making things work together by having them speak a common language.
+-->
 
 ---
 
 # Observability
 
-<!-- And second, and the most relevant for this talk, observability,
-providing both directives on what to send, as well as when to send it.
+<!-- And second, and the most relevant for this talk, observability, providing directives both on what to send, as well as when to send it.
 
-Through observability comes a great opportunity for building metrics,
-and the main focus today is DevOps metrics. Andrea, do you want to
-tell us a bit about those? -->
+Through observability comes a great opportunity for building metrics, and the main focus of our talk today are four major DevOps metrics. 
+
+Andrea, do you want to tell us a bit about those?
+-->
 
 ---
 
@@ -303,33 +279,18 @@ Erik or Andrea ^_^
 
 # Deployment Frequency
 
-<!-- Notes
-Erik: The first one, which may be the most straightforward one,
-is Deployment Frequency.
+<!-- Erik
 
-Andrea's earlier notes:
-Let's take a few examples:
-- kubectl or another deployment tool in a Tekton Task
-- gitops tool like ArgoCD and Flux
-- spinnaker
-- keptn
-
-The relevant data here is:
-- environment (deployment event)
-- artifact name (deployment event)
-
-Erik
+The first one, which may be the most straightforward one, is Deployment Frequency.
 -->
 
 ---
 
 ![bg contain](images/depfreq-1.svg)
 
-<!-- Say that we have this pretty simple setup with an orchestrator helping us
-deploy our application to an environmnt.
+<!-- Say that we have this pretty simple setup with an orchestrator helping us deploy our application to an environment.
 
-This orchestrator could be many things, for instance kubectl controlled via Tekton,
-or some other DevOps automation tools like ArgoCD and Keptn, or maybe Spinnaker.
+This orchestrator could be many things, for instance kubectl controlled via Tekton, or some other DevOps automation tools like ArgoCD or Spinnaker or Keptn.
  -->
 
 ---
@@ -338,25 +299,19 @@ or some other DevOps automation tools like ArgoCD and Keptn, or maybe Spinnaker.
 
 <!-- Anyway, say that we have a new version of our application coming in.
 
-We want to upgrade our existing deployment, and maybe we've also made a 
-configuration change to state that we want an additional deployment
-in a new environment. -->
+We want to upgrade our existing deployment, and maybe we've also made a configuration change to state that we want an additional deployment in a new environment. -->
 
 ---
 
 ![bg contain](images/depfreq-3.svg)
 
-<!-- In CDEvents, we have two events to cover both these cases,
-ServiceUpgraded and ServiceDeployed. -->
+<!-- In CDEvents, we have two events to cover both these cases, ServiceUpgraded and ServiceDeployed. -->
 
 ---
 
 ![bg contain](images/depfreq-4.svg)
 
-<!-- Given that the events state both what was deployed or upgraded,
-and to what new version, and to what environment, these events are 
-sufficient for an observer to be able to detect how often new versions 
-are deployed, and would thus be able to produce the Deployment Frequency metric.
+<!-- Given that the events state both what was deployed or upgraded, and to what new version, and to what environment, these events are sufficient for an observer to be able to detect how often new versions are deployed, and would thus be able to produce the Deployment Frequency metric.
 -->
 
 ---
@@ -413,23 +368,20 @@ exploring the idea of composition.
 
 # Change Failure Rate
 
-<!-- The next metric, Change Failure Rate, is an interesting one from an events
-perspective, so lets look into that.
+<!-- The next metric, Change Failure Rate, is an interesting one from an events perspective, so lets look into that.
 -->
 
 ---
 
 # # Deployments / # Incidents
 
-<!-- This metric can be simplified as the number of deployments we have over
-the number of incidents that occur for these deployments. -->
+<!-- This metric can be simplified as the number of deployments we have over the number of incidents that occur for these deployments. -->
 
 ---
 
 ![bg contain](images/depfreq-4.svg)
 
-<!-- Counting he number of deployments is actually pretty straightforward 
-using the ServiceDeployed and ServiceUpgraded events we looked at earlier.
+<!-- Counting he number of deployments is actually pretty straightforward using the ServiceDeployed and ServiceUpgraded events we looked at earlier.
 
 Not much to worry about there, so lets have a look at incidents.
  -->
@@ -460,8 +412,7 @@ _class:
 
 * ## Environment error
 
-<!-- It could also be something entirely unrelated to the application itself,
-such as a network outage or other type of environment errors. -->
+<!-- It could also be something entirely unrelated to the application itself,such as a network outage or other type of environment errors. -->
 
 * ## ...
 
@@ -475,31 +426,25 @@ _class:
 
 # Who can discover an incident?
 
-<!-- Given the variety of causes of incidents, there will also be many 
-different sources that can discover these issues. -->
+<!-- Given the variety of causes of incidents, there will also be many different sources that can discover these issues. -->
 
 * ## Orchestrator
 
-<!-- The system that deploys your application may notice that it doesn't come
-up properly after deployment. -->
+<!-- The system that deploys your application may notice that it doesn't come up properly after deployment. -->
 
 * ## Monitoring system
 
-<!-- A monitoring system may detect that your application har degraded
-performance -->
+<!-- A monitoring system may detect that your application har degraded performance -->
 
 * ## Application itself
 
-<!-- Of course the application itself may discover that it is not doing
-well -->
+<!-- Of course the application itself may discover that it is not doing well -->
 
 * ## Users / DevOps team
 
-<!-- There may even be manual reports by users or some operations team,
-maybe into a bugtracker or similar. 
+<!-- There may even be manual reports by users or some operations team, maybe into a bugtracker or similar. 
 
-Given that we have so many possible sources, what can should be done
-when an incident is discovered? -->
+Given that we have so many possible sources, what can should be done when an incident is discovered? -->
 
 ---
 
@@ -507,16 +452,13 @@ when an incident is discovered? -->
 
 <!-- We send an Incident event!
 
-Now, this event type is new for us, in fact it hasn't formally made it
-into the spec yet, but we have some prior art which Andrea will
-mention a bit later. -->
+Now, this event type is new for us, in fact it hasn't formally made it into the spec yet, but we have some prior art which Andrea will mention a bit later. -->
 
 ---
 
 ![bg contain](images/cfr-1.svg)
 
-<!-- Anyway, given the same deployment we saw before, with an orchestrator
-and this time also a monitor (like Prometheus)/ -->
+<!-- Anyway, given the same deployment we saw before, with an orchestrator and this time also a monitor (like Prometheus)/ -->
 
 ---
 
@@ -540,9 +482,7 @@ and this time also a monitor (like Prometheus)/ -->
 
 ![bg contain](images/cfr-5.svg)
 
-<!-- But all of these could be seen by an observer which
-could then determine the total number of incidents and produce
-the desired metric. -->
+<!-- But all of these could be seen by an observer which could then determine the total number of incidents and produce the desired metric. -->
 
 ---
 
@@ -584,15 +524,15 @@ Andrea
 
 # Key takeaways
 
-<!-- We're nearing the end of the talk, so let's wrap up with a few key
-takeaways. -->
+<!-- Erik
+
+We're nearing the end of the talk, so let's wrap up with a few key takeaways. -->
 
 ---
 
 # Metrics are tricky
 
-<!-- As we've talked about, metrics may require several different pieces of
-information, and these pieces may come from many different sources.
+<!-- As we've talked about, metrics may require several different pieces of information, and these pieces may come from many different sources.
 
 Bringing everything together can be tricky. -->
 
@@ -600,9 +540,7 @@ Bringing everything together can be tricky. -->
 
 # A common language helps!
 
-<!-- Having then a common language and a standardized way of distributing
-information in this common language can really help, and this is the aim
-of the CDEvents project. -->
+<!-- Having then a common language and a standardized way of distributing information in this common language can really help, and this is the aim of the CDEvents project. -->
 
 ---
 
