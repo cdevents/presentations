@@ -63,3 +63,93 @@ is Deployment Frequency.
 perspective, so lets look into that.
 -->
 
+---
+
+# # Deployments / # Incidents
+
+<!-- As Andrea mentioned before, this metric can be simplified as the number of
+deployments we have over the number of incidents that occur. -->
+
+---
+
+![bg contain](images/depfreq-4.svg)
+
+<!-- Counting he number of deployments is actually pretty straightforward 
+using the  ServiceDeployed and ServiceUpgraded events we looked at earlier.
+
+Not much to worry about there, so lets have a look at incidents.
+ -->
+
+---
+
+# Incidents
+
+<!-- TODO: Does Andrea cover this? -->
+
+---
+<!--
+_class:
+ - invert
+-->
+
+# What can cause an incident?
+
+* ## Application error (bug!)
+
+* ## Configuration error
+
+* ## Environment error
+
+* ## ...
+
+---
+<!--
+_class:
+ - invert
+-->
+
+# Who can discover an incident?
+
+* ## Orchestrator
+
+* ## Monitoring system
+
+* ## Application itself
+
+* ## Users / DevOps team
+
+* ## ...
+
+---
+
+# Send an Incident event!
+
+---
+
+![bg contain](images/cfr-1.svg)
+
+<!--  -->
+
+---
+
+![bg contain](images/cfr-2.svg)
+
+<!--  -->
+
+---
+
+![bg contain](images/cfr-3.svg)
+
+<!--  -->
+
+---
+
+![bg contain](images/cfr-4.svg)
+
+<!--  -->
+
+---
+
+![bg contain](images/cfr-5.svg)
+
+<!--  -->
