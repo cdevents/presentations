@@ -526,10 +526,25 @@ As Erik mentioned, incident events are not part of CDEvents yet. Given the numbe
 Data The environment and the service identifiers and the version deployed must be part of all incident resolution events, along with the original incident ID.
 The time to restore service may be or may be not associated with a change in the system, thus the related data will be optional in the events.
 
+-->
+---
+
+# Keptn Application Lifecycle Events
+
+<!-- Note
+
 Keptn provides abstractions, automation and events related to SLIs, SLOs and
 problems. That enables generating events valuable for tracking the time to
 restore service metric. The CDEvents project is evaluating whether to adopt
 the Keptn model for its own application lifecycle type of events.
+
+-->
+
+---
+
+# Who generate the incident resolution events
+
+<!-- Note
 
 Who generate the incident resolution events?
 Different systems may send events about the same incident resolution, with different amount of context. We plan to allow multiple events in this area that can be collated later by the observer.
