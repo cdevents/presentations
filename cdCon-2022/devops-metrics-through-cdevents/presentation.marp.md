@@ -493,6 +493,12 @@ Now, this event type is new for us, in fact it hasn't formally made it into the 
 
 ![bg contain](images/cfr-5.svg)
 
+<!-- ... and from users or the operations team. -->
+
+---
+
+![bg contain](images/cfr-6.svg)
+
 <!-- But all of these could be seen by an observer which could then determine the total number of incidents and produce the desired metric. -->
 
 ---
