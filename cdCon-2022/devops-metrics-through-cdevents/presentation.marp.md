@@ -517,10 +517,6 @@ _class:
 * ## Configuration change (e.g. scaling)
 * ## A change to an external dependency
 
-</br>
-
-* ## Who generates the events?
-
 <!-- Note
 
 A service degradation may be solved in a number of ways:
