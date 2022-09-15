@@ -97,13 +97,6 @@ The conceptual goal of the CDEvents project is to help build a common language f
 
 ---
 
-<!--
-_class:
- - invert
--->
-
----
-
 # Concrete: Spec and SDKs
 
 <!-- 
