@@ -35,12 +35,9 @@ So, this means developers frequently need to wait ...
 
 <!--
 ... a long long time, like a few months for their work to be fully tested.
-And, of course, it is unlikely that whatever they are working on right now is directly related to what is being verified by the verification team.
+So, if a bug is found, the developers need to make the MOTHER of all context switches to get back into whatever the bug is about. If you're like me and you're having a hard time remembering what you did this morning, imagine remembering what you did eight months ago.
 
-If a bug is discovered, developers need to make the mother of all mental context switches to find and fix the bug.
-Not at all good.
-
-My project lead then proclaimed "We need to bring this time, the time from development to verification and release, down from a few months to a few hours."
+Anyway, my project lead then proclaimed "We need to bring this time, the time from development to verification and release, down from a few months to a few hours."
 
 I remember thinking "going from months to hours seems like a crazy big step!" but I have since been shown over and over again that this step is actually not that crazy!
 
@@ -105,43 +102,12 @@ _class:
  - invert
 -->
 
-# Wider effort
-
-<!-- Suggestion: Skip this slide
-
-So I said "help build" just now, and that is because this it is not only CDEvents involved in this work. 
--->
-
-* ## CDF SIG Interoperability
-
-<!-- 
-The Interoperability special interests group of the Continuous Delivery foundation can probably be seen as the "driver" of establishing this common language.
-
-This group does a lot of work defining and establishing terms for similar concepts across the CI/CD ecosystem, and a lot of these terms pop up in the CDEvents project in one way or another.
- -->
-
-* ## CDF SIG Events
-
-<!-- 
-The Events special interest group spawned out of the interoperability group in late 2020 as a workgroup focusing specifically on a vocabulary for events in CI/CD.
-
-It became a full SIG about a year later, and is the root of...
- -->
-
----
-
-# CDEvents
-
-<!-- Suggestion: Skip this slide too
-The CDEvents project, and its more concrete goal: 
--->
-
 ---
 
 # Concrete: Spec and SDKs
 
 <!-- 
-To build a specification for events in CI/CD, and to build a set of SDKs that help others send and receive such events.
+The concrete goal is to build a specification for events in CI/CD, and to build a set of SDKs that help others send and receive such events.
 -->
 
 ---
@@ -186,60 +152,6 @@ So if we want to send an event such as ServiceDeployed in a language for which w
 
 <!-- 
 Finally, with the SDKs, we can work on integrating CDEvents into new and existing tools and solutions such as your Jenkinses, Argos, Keptns and Tektons, and set up various proof-of-concepts to test out new ideas and help drive the specification forward.
--->
-
----
-
-# On top of CloudEvents
-
-<!--
-CDEvents is built on top of CloudEvents. CloudEvents is a project from the Cloud-Native computing
-foundation for describing event data in a common way, but what does this mean for CDEvents?
--->
-
----
-
-![bg contain](images/cde-on-ce-1-cdevent.svg)
-
-<!--
-Starting with CDEvents, we could see an event as memo we want to distribute.
--->
-
----
-
-![bg contain](images/cde-on-ce-2-content.svg)
-
-<!--
-In this memo, we put information about the subject of the memo, for instance an
-artifact we have built. We also put some information about the context in which
-it was built, for instance in a pipeline. And finally, we have space for
-custom data, which could be any additional information someone else wants to
-include in the memo.
--->
-
----
-
-![bg contain](images/cde-on-ce-3-cloudevents.svg)
-
-<!--
-CloudEvents provides the envelope or package for this memo. We transfer some
-parts of the memo to the back of the envelope as "sender information" which
-can be used to route the envelope, and then we stuff the memo in the envelope
-and seal it.
--->
-
----
-
-![bg contain](images/cde-on-ce-4-eventbus.svg)
-
-<!--
-CloudEvents helps us select the right type of envelope, write the right style
-of address and also actually ships the envelope to wherever we ask it to. It's
-a bit like having our own post office. Regardless of whether we want to send over
-HTTP, AMPQ, Kafka or something else, chances are CloudEvents knows how to do it.
-
-This means we can focus on just defining the payload, and not have to worry about
-the transport.
 -->
 
 ---
@@ -385,13 +297,6 @@ In CDEvents, we have two events to cover both these cases, ServiceUpgraded and S
 
 <!-- 
 Given that the events state both what was deployed or upgraded, and to what new version, and to what environment, these events are sufficient for an observer to be able to detect how often new versions are deployed, and would thus be able to produce the Deployment Frequency metric.
--->
-
----
-
-# Demo
-
-<!-- >>> Andrea <<<
 -->
 
 ---
@@ -647,13 +552,13 @@ A service degradation may be solved in a number of ways:
 - scaling, horizontally or vertically
 - a change external to the system that suffered the degradation (another microservice, networking issues, etc)
 
-As Erik mentioned, incident events are not part of CDEvents yet. Given the number of possible different scenarios, having dedicated incident and incident resolution events is required to calculate the time to restore service metric.
+As mentioned, incident events are not part of CDEvents yet. Given the number of possible different scenarios, having dedicated incident and incident resolution events is required to calculate the time to restore service metric.
 Data The environment and the service identifiers and the version deployed must be part of all incident resolution events, along with the original incident ID.
 The time to restore service may be or may be not associated with a change in the system, thus the related data will be optional in the events.
 -->
 ---
 
-# Keptn Application Lifecycle Events
+# Prior art: Keptn Application Lifecycle Events
 
 <!--
 Keptn provides abstractions, automation and events related to SLIs, SLOs and
@@ -788,3 +693,61 @@ _footer: 'OSSEU | 16.09.2022'
 ##
 
 #### Andrea Frittoli, IBM. Erik Sternerson, doWhile
+
+---
+
+# Extra slides
+
+---
+
+# On top of CloudEvents
+
+<!--
+CDEvents is built on top of CloudEvents. CloudEvents is a project from the Cloud-Native computing
+foundation for describing event data in a common way, but what does this mean for CDEvents?
+-->
+
+---
+
+![bg contain](images/cde-on-ce-1-cdevent.svg)
+
+<!--
+Starting with CDEvents, we could see an event as memo we want to distribute.
+-->
+
+---
+
+![bg contain](images/cde-on-ce-2-content.svg)
+
+<!--
+In this memo, we put information about the subject of the memo, for instance an
+artifact we have built. We also put some information about the context in which
+it was built, for instance in a pipeline. And finally, we have space for
+custom data, which could be any additional information someone else wants to
+include in the memo.
+-->
+
+---
+
+![bg contain](images/cde-on-ce-3-cloudevents.svg)
+
+<!--
+CloudEvents provides the envelope or package for this memo. We transfer some
+parts of the memo to the back of the envelope as "sender information" which
+can be used to route the envelope, and then we stuff the memo in the envelope
+and seal it.
+-->
+
+---
+
+![bg contain](images/cde-on-ce-4-eventbus.svg)
+
+<!--
+CloudEvents helps us select the right type of envelope, write the right style
+of address and also actually ships the envelope to wherever we ask it to. It's
+a bit like having our own post office. Regardless of whether we want to send over
+HTTP, AMPQ, Kafka or something else, chances are CloudEvents knows how to do it.
+
+This means we can focus on just defining the payload, and not have to worry about
+the transport.
+-->
