@@ -87,13 +87,15 @@ _class:
 
 <!-- >>> Erik <<<
 
-Let's first look into what CDEvents is. -->
+Let's first look into what CDEvents is. 
+-->
 
 ---
 
 # Conceptual: Common language
 
-<!-- The conceptual goal of the CDEvents project is to help build a common language for CI/CD and surrounding domains.
+<!-- 
+The conceptual goal of the CDEvents project is to help build a common language for CI/CD and surrounding domains.
 -->
 
 ---
@@ -107,18 +109,21 @@ _class:
 
 <!-- Suggestion: Skip this slide
 
-So I said "help build" just now, and that is because this it is not only CDEvents involved in this work. -->
+So I said "help build" just now, and that is because this it is not only CDEvents involved in this work. 
+-->
 
 * ## CDF SIG Interoperability
 
-<!-- The Interoperability special interests group of the Continuous Delivery foundation can probably be seen as the "driver" of establishing this common language.
+<!-- 
+The Interoperability special interests group of the Continuous Delivery foundation can probably be seen as the "driver" of establishing this common language.
 
 This group does a lot of work defining and establishing terms for similar concepts across the CI/CD ecosystem, and a lot of these terms pop up in the CDEvents project in one way or another.
  -->
 
 * ## CDF SIG Events
 
-<!-- The Events special interest group spawned out of the interoperability group in late 2020 as a workgroup focusing specifically on a vocabulary for events in CI/CD.
+<!-- 
+The Events special interest group spawned out of the interoperability group in late 2020 as a workgroup focusing specifically on a vocabulary for events in CI/CD.
 
 It became a full SIG about a year later, and is the root of...
  -->
@@ -128,26 +133,31 @@ It became a full SIG about a year later, and is the root of...
 # CDEvents
 
 <!-- Suggestion: Skip this slide too
-The CDEvents project, and its more concrete goal: -->
+The CDEvents project, and its more concrete goal: 
+-->
 
 ---
 
 # Concrete: Spec and SDKs
 
-<!-- To build a specification for events in CI/CD, and to build a set of SDKs that help others send and receive such events.
+<!-- 
+To build a specification for events in CI/CD, and to build a set of SDKs that help others send and receive such events.
 -->
 
 ---
 
 ![bg contain](images/spec-sdk-poc-1.svg)
 
-<!-- Lets dig in to the spec a bit first. -->
+<!-- 
+Lets dig in to the spec a bit first. 
+-->
 
 ---
 
 ![bg contain](images/spec-sdk-poc-1-extra.svg)
 
-<!-- The CDEvents spec declares a number of events that represents things that may happen in CI/CD, such as a change having been merged, a task having been run or a new version of a service having been deployed.
+<!-- 
+The CDEvents spec declares a number of events that represents things that may happen in CI/CD, such as a change having been merged, a task having been run or a new version of a service having been deployed.
 
 The spec also defines what data can or must be sent for such events, typically data needed by the receivers of the events.
 
@@ -158,21 +168,78 @@ And finally, as CDEvents is based on CloudEvents, the spec also provides rules a
 
 ![bg contain](images/spec-sdk-poc-2.svg)
 
-<!-- Given this spec, we can now work on a set of SDKs for multiple programming languages and platforms.
+<!-- 
+Given this spec, we can now work on a set of SDKs for multiple programming languages and platforms.
 -->
 
 ---
 
 ![bg contain](images/spec-sdk-poc-2-extra.svg)
 
-<!-- So if we want to send an event such as ServiceDeployed in a language for which we have an SDK, we can get quite a lot of help on the way.
+<!-- 
+So if we want to send an event such as ServiceDeployed in a language for which we have an SDK, we can get quite a lot of help on the way.
 -->
 
 ---
 
 ![bg contain](images/spec-sdk-poc-3.svg)
 
-<!-- Finally, with the SDKs, we can work on integrating CDEvents into new and existing tools and solutions such as your Jenkinses, Argos, Keptns and Tektons, and set up various proof-of-concepts to test out new ideas and help drive the specification forward.
+<!-- 
+Finally, with the SDKs, we can work on integrating CDEvents into new and existing tools and solutions such as your Jenkinses, Argos, Keptns and Tektons, and set up various proof-of-concepts to test out new ideas and help drive the specification forward.
+-->
+
+---
+
+# On top of CloudEvents
+
+<!--
+CDEvents is built on top of CloudEvents. CloudEvents is a project from the Cloud-Native computing
+foundation for describing event data in a common way, but what does this mean for CDEvents?
+-->
+
+---
+
+![bg contain](images/cde-on-ce-1-cdevent.svg)
+
+<!--
+Starting with CDEvents, we could see an event as memo we want to distribute.
+-->
+
+---
+
+![bg contain](images/cde-on-ce-2-content.svg)
+
+<!--
+In this memo, we put information about the subject of the memo, for instance an
+artifact we have built. We also put some information about the context in which
+it was built, for instance in a pipeline. And finally, we have space for
+custom data, which could be any additional information someone else wants to
+include in the memo.
+-->
+
+---
+
+![bg contain](images/cde-on-ce-3-cloudevents.svg)
+
+<!--
+CloudEvents provides the envelope or package for this memo. We transfer some
+parts of the memo to the back of the envelope as "sender information" which
+can be used to route the envelope, and then we stuff the memo in the envelope
+and seal it.
+-->
+
+---
+
+![bg contain](images/cde-on-ce-4-eventbus.svg)
+
+<!--
+CloudEvents helps us select the right type of envelope, write the right style
+of address and also actually ships the envelope to wherever we ask it to. It's
+a bit like having our own post office. Regardless of whether we want to send over
+HTTP, AMPQ, Kafka or something else, chances are CloudEvents knows how to do it.
+
+This means we can focus on just defining the payload, and not have to worry about
+the transport.
 -->
 
 ---
@@ -218,7 +285,7 @@ We have covered these desired achievments in way more detail in previous talks, 
 
 <!-- And second, and the most relevant for this talk, observability, providing directives both on what to send, as well as when to send it.
 
-Through observability comes a great opportunity for building metrics, and the main focus of our talk today are four major DevOps metrics.
+Through observability comes a great opportunity for building metrics, and the main focus of our talk today are four important DevOps metrics.
 
 Andrea, do you want to tell us a bit about those?
 -->
@@ -292,27 +359,32 @@ The first one, which may be the most straightforward one, is Deployment Frequenc
 <!-- Say that we have this pretty simple setup with an orchestrator helping us deploy our application to an environment.
 
 This orchestrator could be many things, for instance kubectl controlled via Tekton, or some other DevOps automation tools like ArgoCD or Spinnaker or Keptn.
- -->
+-->
 
 ---
 
 ![bg contain](images/depfreq-2.svg)
 
-<!-- Anyway, say that we have a new version of our application coming in.
+<!-- 
+Anyway, say that we have a new version of our application coming in.
 
-We want to upgrade our existing deployment, and maybe we've also made a configuration change to state that we want an additional deployment in a new environment. -->
+We want to upgrade our existing deployment, and maybe we've also made a configuration change to state that we want an additional deployment in a new environment. 
+-->
 
 ---
 
 ![bg contain](images/depfreq-3.svg)
 
-<!-- In CDEvents, we have two events to cover both these cases, ServiceUpgraded and ServiceDeployed. -->
+<!--
+In CDEvents, we have two events to cover both these cases, ServiceUpgraded and ServiceDeployed.
+-->
 
 ---
 
 ![bg contain](images/depfreq-4.svg)
 
-<!-- Given that the events state both what was deployed or upgraded, and to what new version, and to what environment, these events are sufficient for an observer to be able to detect how often new versions are deployed, and would thus be able to produce the Deployment Frequency metric.
+<!-- 
+Given that the events state both what was deployed or upgraded, and to what new version, and to what environment, these events are sufficient for an observer to be able to detect how often new versions are deployed, and would thus be able to produce the Deployment Frequency metric.
 -->
 
 ---
@@ -332,7 +404,7 @@ Next, up is Lead Time for Changes. For this metric, we need data that spans all 
 
 ---
 
-![bg contain](images/lftc-1-change.svg)
+![bg contain](images/ltfc-1-change.svg)
 
 <!--
 We'll start with a change.
@@ -340,12 +412,15 @@ We'll start with a change.
 
 ---
 
-![bg contain](images/lftc-2-scm.svg)
+![bg contain](images/ltfc-2-scm.svg)
 
 <!--
-This change goes into our CSM system, regardless of the tool we use, there will be a concept of repository which must be part of any Change related event in CDEvents. The timestamp of the change a second mandatory piece of information.
-
-Let's for now assume a single artifact, single branch scenario.
+This change goes into our SCM solution, whichever one we are using, it gets reviewed
+and eventually merged. This is where the clock starts ticking for our lead time.
+This is also where our first important even is sent, ChangeMerged, which contains
+the repository and sha corresponding to the merge.
+There could of course be multiple repositories and multiple changes involved,
+but for simplicity we are looking at single-repo, single-change.
 -->
 
 ---
@@ -353,54 +428,38 @@ Let's for now assume a single artifact, single branch scenario.
 ![bg contain](images/ltfc-3-build.svg)
 
 <!--
-Next, the build system creates an artifact from a subset of the changes merged into the SCM. If we could assume a monotonic relation over time between changes and build, repository and timestamp would be enough to know which change is included in which build.
-In most cases though we will need to consider change IDs, and expect Artifact events to include the last change ID included in the build.
-To discover if a change is included in a build, the observer will need to ask the SCM if a change ID was merged "before" the last change ID included in the build.
+Next, the build system does its stuff and spits out an artifact based on the change we just saw.
+Connected to this, an ArtifactPackaged event is produced informing the world that this new
+artifact or image or deployment package or similar exists.
 -->
 
 ---
 
 ![bg contain](images/ltfc-4-registry.svg)
 
-<!--  Notes
-
-The build system may use different tools depending on the type of artifact and on the preferences of the team responsible for it. In all cases the build process must outcome an artifact ID which uniquely identifies the artifact. This ID is used by the deployment system to obtain the artifact to deploy, and is then reported back in the Service replated CDEvents.
-
-We started with the single artifact scenario, however in real life, we will often need to consider composition scenarios, where an artifact is not directly deployed, but it's used instead to build a composite artifact or collection of artifacts (release).
-
-We started investigating how to define such scenarios in CDEvents,
-exploring the idea of composition.
-
+<!--
+But just the fact that the package exists doesn't mean anyone else can get it. It needs to be pushed
+to a repository, and when that happens another event is sent, called ArtifactPublished.
 -->
 
 ---
 
 ![bg contain](images/ltfc-5-deploy.svg)
 
-<!--  Notes
-
-The build system may use different tools depending on the type of artifact and on the preferences of the team responsible for it. In all cases the build process must outcome an artifact ID which uniquely identifies the artifact. This ID is used by the deployment system to obtain the artifact to deploy, and is then reported back in the Service replated CDEvents.
-
-We started with the single artifact scenario, however in real life, we will often need to consider composition scenarios, where an artifact is not directly deployed, but it's used instead to build a composite artifact or collection of artifacts (release).
-
-We started investigating how to define such scenarios in CDEvents,
-exploring the idea of composition.
-
+<!--
+And finally, once the artifact is published and available, we can pick it up and deploy it,
+taking us to the end of our change-to-release pipeline.
 -->
 
 ---
 
 ![bg contain](images/ltfc-6-callout.svg)
 
-<!--  Notes
+<!--
+So with these events, we have what we need for an observer to be able to calculate the
+Lead-time-for-changes metric.
 
-The build system may use different tools depending on the type of artifact and on the preferences of the team responsible for it. In all cases the build process must outcome an artifact ID which uniquely identifies the artifact. This ID is used by the deployment system to obtain the artifact to deploy, and is then reported back in the Service replated CDEvents.
-
-We started with the single artifact scenario, however in real life, we will often need to consider composition scenarios, where an artifact is not directly deployed, but it's used instead to build a composite artifact or collection of artifacts (release).
-
-We started investigating how to define such scenarios in CDEvents,
-exploring the idea of composition.
-
+But enough slides, let's look at something live. Over to you Andrea.
 -->
 
 ---
