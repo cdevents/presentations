@@ -31,7 +31,7 @@ So, this means developers frequently need to wait ...
 -->
 
 ---
-# A long long time...
+# ...a long long time...
 
 <!--
 ... a long long time, like a few months for their work to be fully tested.
@@ -41,7 +41,7 @@ Anyway, my project lead then proclaimed "We need to bring this time, the time fr
 
 I remember thinking "going from months to hours seems like a crazy big step!" but I have since been shown over and over again that this step is actually not that crazy!
 
-One factor that really helps taking this step is to understand where our bottlenecks are, and for that we need metrics.
+One input that really helps taking this step is to understand where our bottlenecks are, and for that we need metrics.
 
 My name is Erik Sternerson...
 -->
@@ -371,7 +371,7 @@ But enough slides, let's look at something live. Over to you Andrea.
 
 # Change Failure Rate
 
-<!-- >>> Erik <<<
+<!-- >>> Andrea <<<
 The next metric, Change Failure Rate, is an interesting one from an events perspective, so lets look into that.
 -->
 
@@ -527,6 +527,9 @@ But all of these could be seen by an observer which could then determine the tot
 
 # Time to Restore Service
 
+<!-- >>> Andrea <<<
+-->
+
 ---
 <!--
 _class:
@@ -602,12 +605,12 @@ required to keep track of the "time to restore service". This could be integrate
 
 <!-- >>> Erik <<<
 
-We're nearing the end of the talk, so let's wrap up with a few key takeaways.
+We're nearing the end of the talk, so this is the message we want to leave you with.
 -->
 
 ---
 
-# Metrics are tricky
+# Metrics are tricky...
 
 <!--
 As we've talked about, metrics may require several different pieces of information, and these pieces may come from many different sources ...
@@ -615,7 +618,7 @@ As we've talked about, metrics may require several different pieces of informati
 
 ---
 
-# Metrics are tricky
+# Metrics are tricky...
 
 ![bg contain](images/key-takeaway-1.svg)
 
@@ -625,7 +628,7 @@ As we've talked about, metrics may require several different pieces of informati
 
 ---
 
-# A common language helps!
+# ... but a common language helps!
 
 ![bg contain](images/key-takeaway-1.svg)
 
@@ -635,7 +638,7 @@ Having then a common language and a standardized way of distributing information
 
 ---
 
-# A common language helps!
+# ... but a common language helps!
 
 ![bg contain](images/key-takeaway-2.svg)
 
