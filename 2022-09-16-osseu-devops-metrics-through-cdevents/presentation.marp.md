@@ -206,10 +206,18 @@ Andrea, do you want to tell us a bit about those?
 
 Thanks Erik for the great introduction about CDEvents.
 
-The State of the DevOps Report, published by Puppet, has been looking at
-how organization implement DevOps over the years. Already since 2013
-the report had identified a set of metrics which describe measurable
-outcome of organizations implementing DevOps practices.
+Today we're going to focus on a specific type of metrics, called DevOps metrics.
+
+While DevOps practices are becoming ubiquitous, different organizations are at different stages of their journey.
+It's a journey that requires continued investment - but how do we know if they investment is paying off?
+
+The recent surge in software supply chain attacks does not help, as it becomes critical to shift left security checks as well and build a secure software supply chain.
+
+Since 2013 the State of the DevOps Report, published by Puppet, has been looking at how organization implement DevOps.
+The report groups organizations in low, middle and high performing, and over the years they identified a strong correlation between this groups and a specific set of DevOps metrics, which describe measurable outcome of organizations implementing DevOps practices.
+
+To calculate metrics we need data, and providing the data manually does not scale very well with the number of repository, teams and applications.
+
 -->
 
 ---
@@ -227,18 +235,22 @@ _class:
 * Time to Restore Service
 
 <!--
+What kind of data are talking about?
+
 The four metrics used by the report are those identified by the DORA (DevOps Research and assessment group.
-These metrics span the entire software lifecycle. They do not necessarily cover all aspects of DevOps, and organizations may define other metrics as required.
+These metrics span the entire software lifecycle.
 
 * Deployment Frequency
 * Lead Time for Changes
 * Change Failure Rate
 * Time to Restore Service
 
-Something that is apparent from this list of metrics is that no single tool will produce the data required to calculate them.
+Something that is apparent from this list of metrics is that no single tool will produce the data required to calculate them. And this is where CDEvents can help:
 
-Having a common language like CDEvents spoken by different tools would simplify the analysis of data required to calculate the metrics. Our goal is to foster an ecosystem of tools that will be able to do this for systems that can produce CDEvents.
+- on the producing side, it provides a shared minimum data model for tools in the DevOps space to implement
+- on the consuming side, it makes data easier to ingest, store and process
 
+CDEvent, when widely implemented by tools, can also lower the barrier to adoption of new tools.
 Organizations will be able then to switch one of their tools, or add a new one, and as long as it supports CDEvents, metrics will keep working.
 -->
 
@@ -365,10 +377,10 @@ But enough slides, let's look at something live. Over to you Andrea.
 
 ---
 
-# Demo
-
 <!-- >>> Andrea <<<
 -->
+
+![bg contain](images/demo-setup.svg)
 
 ---
 
@@ -555,16 +567,6 @@ As mentioned, incident events are not part of CDEvents yet. Given the number of 
 Data The environment and the service identifiers and the version deployed must be part of all incident resolution events, along with the original incident ID.
 The time to restore service may be or may be not associated with a change in the system, thus the related data will be optional in the events.
 -->
----
-
-# Prior art: Keptn Application Lifecycle Events
-
-<!--
-Keptn provides abstractions, automation and events related to SLIs, SLOs and
-problems. That enables generating events valuable for tracking the time to
-restore service metric. The CDEvents project is evaluating whether to adopt
-the Keptn model for its own application lifecycle type of events.
--->
 
 ---
 
@@ -602,6 +604,16 @@ In many instances the resolution may not be automated at all. The CDEvents SDKs 
 required to keep track of the "time to restore service". This could be integrated for instance in the issue tracking system of choice.
 -->
 
+---
+
+# Prior art: Keptn Application Lifecycle Events
+
+<!--
+Keptn provides abstractions, automation and events related to SLIs, SLOs and
+problems. That enables generating events valuable for tracking the time to
+restore service metric. The CDEvents project is evaluating whether to adopt
+the Keptn model for its own application lifecycle type of events.
+-->
 ---
 
 # Key takeaways
