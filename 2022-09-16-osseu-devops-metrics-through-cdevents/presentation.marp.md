@@ -129,6 +129,9 @@ And finally, as CDEvents is based on CloudEvents, the spec also provides rules a
 
 <!-- 
 Given this spec, we can now work on a set of SDKs for multiple programming languages and platforms.
+
+If you attended the excellent talk by Eddie Zaneski yesterday on generating code from schemas,
+this is something we are actively working towards.
 -->
 
 ---
@@ -136,7 +139,7 @@ Given this spec, we can now work on a set of SDKs for multiple programming langu
 ![bg contain](images/spec-sdk-poc-2-extra.svg)
 
 <!-- 
-So if we want to send an event such as ServiceDeployed in a language for which we have an SDK, we can get quite a lot of help on the way.
+So if we want to send an event such as PipelineRunQueuedEvent in a language for which we have an SDK, we can get quite a lot of help on the way.
 -->
 
 ---
@@ -163,7 +166,7 @@ _class:
 <!-- The spec itself is driven by the CDEvents team, but with plenty of support, input and feedback from the wider community.
 -->
 
-* ## Project communities
+* ## CI/CD Project communities
 
 <!-- Several integrations and proof-of-concepts and at least one of the SDKs thus far have been done wholly or partly outside of the CDEvents project itself, by members of the project communities for several CI/CD tools.
 -->
@@ -628,7 +631,7 @@ As we've talked about, metrics may require several different pieces of informati
 
 ---
 
-# ... but a common language helps!
+## ... but a common language helps!
 
 ![bg contain](images/key-takeaway-1.svg)
 
@@ -638,7 +641,7 @@ Having then a common language and a standardized way of distributing information
 
 ---
 
-# ... but a common language helps!
+## ... but a common language helps!
 
 ![bg contain](images/key-takeaway-2.svg)
 
