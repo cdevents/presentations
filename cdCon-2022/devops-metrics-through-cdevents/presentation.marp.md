@@ -204,7 +204,7 @@ _class:
 
 <!-- Lastly about CDEvents, I want to just very briefly cover the two main areas that we want to address with our project. 
 
-We have covered these desired achievments in way more detail in previous talks, but for the purpose of this talk, our two main goals are... 
+We have covered these desired achievements in way more detail in previous talks, but for the purpose of this talk, our two main goals are... 
 -->
 
 ---
@@ -232,6 +232,11 @@ Andrea, do you want to tell us a bit about those?
 <!-- Notes
 Thanks Erik for the great introduction about CDEvents.
 
+- Rephrase this, focus on the large DevOps space, fragmented tool landscape
+  and seemingly neverending amount on automation work
+- Orgs need metrics to know where to invest their work more effectively
+- One set of common metrics exists - DORA
+
 The State of the DevOps Report, published by Puppet, has been looking at
 how organization implement DevOps over the years. Already since 2013
 the report had identified a set of metrics which describe measurable
@@ -257,12 +262,20 @@ _class:
 <!-- Notes
 
 The four metrics used by the report are those identified by the DORA (DevOps Research and assessment group.
-These metrics span the entire software lifecycle. They do not necessarily cover all aspects of DevOps, and organizations may define other metrics as required.
+These metrics span the entire software lifecycle. [They do not necessarily cover all aspects of DevOps, and organizations may define other metrics as required.] -> maybe not this last sentence
 
 * Deployment Frequency
 * Lead Time for Changes
 * Change Failure Rate
 * Time to Restore Service
+
+- Depending on the amount of amount of automation, manual or automated
+- When automated, a collection of tools and manual inputs contribute to the data
+
+- Advantages of CDEvents:
+    - when adopted by tools and individuals, it provides a consistent terminology and data model
+    - once the data is collected, easier to process and calculate metrics
+    - lower barrier to adopting new tools
 
 Something that is apparent from this list of metrics is that no single tool will produce the data required to calculate them.
 
